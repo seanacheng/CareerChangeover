@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Values Visualization</string>
+    <string name="discover_your_values">Discover Your Values</string>
+    <string name="identify_employers_values">Identify Your Employer\'s Values</string>
+    <string name="take_survey">Take Survey</string>
+    <string name="view_results">View Results</string>
+    <string name="about_survey">Schwartz Value Survey</string>
+    <string name="instructions">Survey Instructions</string>
+    <string name="start_survey">Begin Survey</string>
+</resources>
