@@ -6,7 +6,7 @@
     tools:context=".SurveyMenu">
 
     <Button
-        android:id="@+id/view_results"
+        android:id="@+id/begin_survey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -14,7 +14,7 @@
         android:layout_marginBottom="60dp"
         android:text="@string/start_survey"
         tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="430dp" />
+        tools:layout_editor_absoluteY="430dp"/>
 
     <TextView
         android:id="@+id/textView"

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        identify_values = findViewById(R.id.identify_values);
+        identify_values = findViewById(R.id.take_survey);
         view_results = findViewById(R.id.view_results);
         identify_values.setOnClickListener(this);
         view_results.setOnClickListener(this);
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.identify_values:
+            case R.id.take_survey:
                 Intent toSurveyMenu = new Intent(MainActivity.this,SurveyMenu.class);
                 startActivity(toSurveyMenu);
                 Log.d("tag", "onClick: identify values");
