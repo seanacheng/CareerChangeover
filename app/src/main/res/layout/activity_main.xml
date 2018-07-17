@@ -8,22 +8,22 @@
 
     <Button
         android:id="@+id/take_survey"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="@dimen/top_button"
         android:text="@string/take_survey"
         tools:layout_editor_absoluteX="122dp"
         tools:layout_editor_absoluteY="365dp" />
 
     <Button
         android:id="@+id/view_results"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="@dimen/bottom_button"
         android:text="@string/view_results"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="430dp" />

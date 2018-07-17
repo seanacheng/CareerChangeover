@@ -2,4 +2,7 @@
 <resources>
     <dimen name="top_text">40dp</dimen>
     <dimen name="bottom_text">180dp</dimen>
+    <dimen name="top_button">120dp</dimen>
+    <dimen name="bottom_button">60dp</dimen>
+    <dimen name="button_right">20dp</dimen>
 </resources>
