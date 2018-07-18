@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="I value..." />
+        android:text="@string/values" />
 
     <TextView
         android:id="@+id/description"
@@ -20,9 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/question"
-        android:text="e.g.(...)" />
+        android:text="@string/explanation" />
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    <RadioGroup
+        android:id="@+id/responses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -30,10 +31,11 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio-1"
+            android:id="@+id/radio_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="-1" />
 
         <RadioButton
@@ -41,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="0" />
 
         <RadioButton
@@ -48,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="1" />
 
         <RadioButton
@@ -55,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="2" />
 
         <RadioButton
@@ -62,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="3" />
 
         <RadioButton
@@ -69,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="4" />
 
         <RadioButton
@@ -76,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="5" />
 
         <RadioButton
@@ -83,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:onClick="onRadioButtonClicked"
             android:text="6" />
 
         <RadioButton
@@ -90,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
+            android:textSize="16sp"
             android:text="7" />
 
     </RadioGroup>

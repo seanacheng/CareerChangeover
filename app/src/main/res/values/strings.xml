@@ -6,6 +6,10 @@
     <string name="view_results">View Results</string>
     <string name="about_survey">Schwartz Value Survey</string>
     <string name="instructions">Instructions</string>
+    
+    <string name="values">Value</string>
+    <string name="explanation">Explanation</string>
+
     <string name="start_survey">Start</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
