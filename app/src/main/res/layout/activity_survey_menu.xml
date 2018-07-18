@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SurveyMenu">
+    tools:context=".SurveyMenuActivity">
 
     <Button
         android:id="@+id/begin_survey"
@@ -12,10 +12,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/button_right"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/button_right"
         android:layout_marginBottom="@dimen/bottom_button"
-        android:text="@string/start_survey"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="430dp"/>
+        android:text="@string/start_survey" />
 
     <TextView
         android:id="@+id/textView"
@@ -26,9 +26,7 @@
         android:layout_marginTop="@dimen/top_text"
         android:text="@string/about_survey"
         android:textSize="24sp"
-        android:textColor="@color/colorAccent"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="70dp" />
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -39,8 +37,6 @@
         android:layout_marginTop="@dimen/bottom_text"
         android:text="@string/instructions"
         android:textSize="24sp"
-        android:textColor="@color/colorAccent"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="193dp" />
+        android:textColor="@color/colorAccent" />
 
 </RelativeLayout>

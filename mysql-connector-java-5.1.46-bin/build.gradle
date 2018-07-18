@@ -1,2 +1,4 @@
 configurations.maybeCreate("default")
 artifacts.add("default", file('mysql-connector-java-5.1.46-bin.jar'))
+dependencies {
+}
