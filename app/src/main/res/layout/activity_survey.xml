@@ -24,19 +24,12 @@
 
     <RadioGroup
         android:id="@+id/responses"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/bottom_button"
         android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radio_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:textSize="16sp"
-            android:text="-1" />
 
         <RadioButton
             android:id="@+id/radio0"
@@ -91,16 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:onClick="onRadioButtonClicked"
             android:text="6" />
-
-        <RadioButton
-            android:id="@+id/radio7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:textSize="16sp"
-            android:text="7" />
 
     </RadioGroup>
 

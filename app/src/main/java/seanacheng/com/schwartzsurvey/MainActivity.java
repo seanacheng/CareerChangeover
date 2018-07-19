@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.take_survey:
-                Intent toSurveyMenu = new Intent(MainActivity.this,SurveyMenuActivity.class);
+                Intent toSurveyMenu = new Intent(MainActivity.this,SurveyActivity.class);
                 startActivity(toSurveyMenu);
                 Log.d("tag", "onClick: identify values");
                 break;
