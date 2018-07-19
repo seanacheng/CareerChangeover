@@ -92,6 +92,7 @@
         android:layout_alignLeft="@id/rankRadioGroup"
         android:layout_alignStart="@+id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
+        android:layout_marginBottom="@dimen/survey_vertical_margin"
         android:text="     Not Important"
         android:textSize="12sp" />
 
@@ -103,7 +104,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/survey_vertical_margin"
         android:text="Important"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/veryImportant"
