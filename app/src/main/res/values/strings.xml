@@ -6,8 +6,8 @@
     <string name="view_results">View Results</string>
     <string name="about_survey">Schwartz Value Survey</string>
     <string name="instructions">Instructions</string>
-    
-    <string name="values">Value</string>
+    <string name="personal_survey_statement">As a guiding principle in my life, this value is... </string>
+    <string name="values">Value Statement</string>
     <string name="explanation">Explanation</string>
 
 </resources>

@@ -5,4 +5,7 @@
     <dimen name="top_button">120dp</dimen>
     <dimen name="bottom_button">60dp</dimen>
     <dimen name="button_right">20dp</dimen>
+    <dimen name="survey_vertical_margin">20dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="radio_margin">10dp</dimen>
 </resources>

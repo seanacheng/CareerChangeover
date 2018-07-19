@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/valueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/notImportant"
+        android:layout_alignLeft="@id/notImportant"
+        android:layout_marginTop="@dimen/survey_vertical_margin"
+        android:text="Value" />
+
+    <RadioGroup
+        android:id="@+id/rankRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/valueTextView"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/radio6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/radio_margin"
+            android:layout_marginRight="@dimen/radio_margin"
+            android:checked="false"
+            android:textSize="@dimen/text_size"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/notImportant"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/rankRadioGroup"
+        android:layout_alignStart="@+id/rankRadioGroup"
+        android:layout_below="@+id/rankRadioGroup"
+        android:text="     Not Important"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/important"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rankRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/survey_vertical_margin"
+        android:text="Important"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/veryImportant"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rankRadioGroup"
+        android:layout_alignRight="@id/rankRadioGroup"
+        android:layout_below="@+id/rankRadioGroup"
+        android:layout_marginBottom="@dimen/survey_vertical_margin"
+        android:text="     Very Important"
+        android:textSize="12sp"/>
+
+
+</RelativeLayout>
