@@ -13,7 +13,7 @@ import java.util.Map;
 public class ItemAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
-    private Map<Integer, String> valueMap = new HashMap<>();
+    private Map<Integer, String> valueMap;
 
     public ItemAdapter(Context c, Map<Integer, String> map) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -42,7 +42,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView valueTextView = (TextView) v.findViewById(R.id.valueTextView);
         String id = Integer.toString(position+1);
         String value = valueMap.get(position+1);
-        idTextView.setText(id+". ");
+        idTextView.setText(" "+id+". ");
         valueTextView.setText(value);
 
         return v;

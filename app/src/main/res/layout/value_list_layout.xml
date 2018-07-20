@@ -14,7 +14,7 @@
 
     <TextView
         android:id="@+id/valueTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/idTextView"
         android:layout_toEndOf="@+id/idTextView"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/idTextView"
+        android:layout_below="@id/valueTextView"
         android:orientation="horizontal">
 
         <RadioButton
@@ -95,14 +95,14 @@
 
     <TextView
         android:id="@+id/notImportant"
-        android:layout_width="55dp"
+        android:layout_width="@dimen/imp_lbl_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/rankRadioGroup"
         android:layout_alignStart="@+id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
         android:layout_marginBottom="@dimen/survey_vertical_margin"
         android:text="     Not Important"
-        android:textSize="12sp" />
+        android:textSize="@dimen/imp_lbl_txt_size" />
 
     <TextView
         android:id="@+id/important"
@@ -112,18 +112,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/survey_vertical_margin"
         android:text="Important"
-        android:textSize="12sp" />
+        android:textSize="@dimen/imp_lbl_txt_size" />
 
     <TextView
         android:id="@+id/veryImportant"
-        android:layout_width="55dp"
+        android:layout_width="@dimen/imp_lbl_width"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/rankRadioGroup"
         android:layout_alignRight="@id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
         android:layout_marginBottom="@dimen/survey_vertical_margin"
         android:text="     Very Important"
-        android:textSize="12sp"/>
+        android:textSize="@dimen/imp_lbl_txt_size"/>
 
 
 </RelativeLayout>

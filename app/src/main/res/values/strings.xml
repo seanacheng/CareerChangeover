@@ -2,10 +2,9 @@
     <string name="app_name">Values Visualization</string>
     <string name="discover_your_values">Discover Your Values</string>
     <string name="identify_employers_values">Identify Your Employer\'s Values</string>
-    <string name="take_survey">Take Survey</string>
+    <string name="take_self_eval">Survey My Values</string>
+    <string name="take_employer_eval">Survey Employer\'s Values</string>
     <string name="view_results">View Results</string>
-    <string name="about_survey">Schwartz Value Survey</string>
-    <string name="instructions">Instructions</string>
     <string name="personal_survey_statement">As a guiding principle in my life, this value is... </string>
     <string name="values">Value Statement</string>
     <string name="explanation">Explanation</string>

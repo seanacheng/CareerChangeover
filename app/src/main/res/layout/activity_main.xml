@@ -4,18 +4,46 @@
     android:id="@+id/View"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/introTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/discover_your_values_text"
+        android:text="@string/discover_your_values"
+        android:textSize="@dimen/intro_text_size" />
+
+    <TextView
+        android:id="@+id/introTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/identify_employers_values_text"
+        android:text="@string/identify_employers_values"
+        android:textSize="@dimen/intro_text_size" />
+
     <Button
-        android:id="@+id/take_survey"
+        android:id="@+id/take_self_survey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/top_button"
-        android:text="@string/take_survey"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="365dp" />
+        android:layout_marginBottom="@dimen/self_survey_button"
+        android:text="@string/take_self_eval" />
+
+    <Button
+        android:id="@+id/take_employer_survey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/employer_survey_button"
+        android:text="@string/take_employer_eval" />
 
     <Button
         android:id="@+id/view_results"
@@ -23,34 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/bottom_button"
-        android:text="@string/view_results"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="430dp" />
+        android:layout_marginBottom="@dimen/results_button"
+        android:text="@string/view_results" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/top_text"
-        android:text="@string/discover_your_values"
-        android:textSize="24sp"
-        android:textColor="@color/newColor"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="70dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/bottom_text"
-        android:text="@string/identify_employers_values"
-        android:textSize="24sp"
-        android:textColor="@color/newColor"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="193dp" />
 </RelativeLayout>

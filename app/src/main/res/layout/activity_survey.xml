@@ -11,9 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/survey_statement_top"
         android:text="@string/personal_survey_statement"
-        android:textColor="#000000"
         android:textSize="@dimen/text_size" />
 
     <ListView
@@ -23,6 +22,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp" />
+        android:layout_marginTop="@dimen/list_view_top" />
 
 </RelativeLayout>

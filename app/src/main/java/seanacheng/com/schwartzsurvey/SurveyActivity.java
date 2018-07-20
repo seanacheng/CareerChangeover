@@ -15,7 +15,7 @@ public class SurveyActivity extends AppCompatActivity{
     MyDbHandler myDbHandler;
     ItemAdapter itemAdapter;
     ListView listView;
-    Map<Integer, String> valueMap = new HashMap<>();
+    Map<Integer, String> valueMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,11 @@ public class SurveyActivity extends AppCompatActivity{
             int id = v.getID();
             String value = v.getValue();
             valueMap.put(id,value);
-            Log.d("tag", "onCreate: "+id+", "+value);
         }
 
         listView = findViewById(R.id.surveyListView);
         itemAdapter = new ItemAdapter(this,valueMap);
         listView.setAdapter(itemAdapter);
-
-
 
     }
 

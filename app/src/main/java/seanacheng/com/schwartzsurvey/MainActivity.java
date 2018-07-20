@@ -9,16 +9,18 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button identify_values, view_results;
+    Button identify_my_values, identify_employer_values, view_results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        identify_values = findViewById(R.id.take_survey);
+        identify_my_values = findViewById(R.id.take_self_survey);
+        identify_employer_values = findViewById(R.id.take_employer_survey);
         view_results = findViewById(R.id.view_results);
-        identify_values.setOnClickListener(this);
+        identify_my_values.setOnClickListener(this);
+        identify_employer_values.setOnClickListener(this);
         view_results.setOnClickListener(this);
         Log.d("tag", "onCreate");
     }
@@ -27,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.take_survey:
+            case R.id.take_self_survey:
                 Intent toSurveyMenu = new Intent(MainActivity.this,SurveyActivity.class);
                 startActivity(toSurveyMenu);
-                Log.d("tag", "onClick: identify values");
+                break;
+            case R.id.take_employer_survey:
                 break;
             case R.id.view_results:
-                Log.d("tag","onClick: view results");
                 break;
         }
     }
