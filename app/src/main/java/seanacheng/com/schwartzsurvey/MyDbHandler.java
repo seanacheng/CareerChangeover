@@ -29,7 +29,6 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
         createSQLiteTable(database);
         insertValues(database);
-        Log.d("tag", "onCreate: DbHandler");
     }
 
     @Override
@@ -40,11 +39,9 @@ public class MyDbHandler extends SQLiteOpenHelper {
         String createDB = "create table if not exists "+TABLE_NAME+"("+COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_VALUE+" text not null, "+COLUMN_SELF_EVAL+" integer default 0, "+COLUMN_EMPLOYER_EVAL+" integer default 0);";
         SQLiteDatabase.execSQL(createDB);
-        Log.d("tag", "createSQLiteTable ");
     }
 
     private void insertValues(SQLiteDatabase db) {
-        Log.d("tag", "insertValues called");
 
         String[] valuesArray = { "EQUALITY (equal opportunity for all)",
                                 "SOCIAL POWER (control over others, dominance)",
@@ -100,54 +97,6 @@ public class MyDbHandler extends SQLiteOpenHelper {
             values.put(COLUMN_VALUE,valueString);
             db.insert(TABLE_NAME,null,values);
         }
-
-//        String insertValues = "insert into "+TABLE_NAME+" ("+COLUMN_VALUE+") values \n"+
-//                "(\"EQUALITY (equal opportunity for all)\"),\n" +
-//                "(\"SOCIAL POWER (control over others, dominance)\"),\n" +
-//                "(\"PLEASURE (gratification of desires)\"),\n" +
-//                "(\"FREEDOM (freedom of action and thought)\"),\n" +
-//                "(\"SOCIAL ORDER (stability of society)\"),\n" +
-//                "(\"AN EXCITING LIFE (stimulating experiences)\"),\n" +
-//                "(\"POLITENESS (courtesy, good manners)\"),\n" +
-//                "(\"WEALTH (material possessions, money)\"),\n" +
-//                "(\"NATIONAL SECURITY (protection of my nation from enemies)\"),\n" +
-//                "(\"RECIPROCATION OF FAVORS (avoidance of indebtedness)\"),\n" +
-//                "(\"CREATIVITY (uniqueness, imagination)\"),\n" +
-//                "(\"A WORLD AT PEACE (free of war and conflict)\"),\n" +
-//                "(\"RESPECT FOR TRADITION (preservation of time honored customs)\"),\n" +
-//                "(\"SELF-DISCIPLINE (self-restraint, resistance to temptation)\"),\n" +
-//                "(\"FAMILY SECURITY (safety for loved ones)\"),\n" +
-//                "(\"UNITY WITH NATURE (fitting into nature)\"),\n" +
-//                "(\"A VARIED LIFE (filled with challenge, novelty and change)\"),\n" +
-//                "(\"WISDOM (a mature understanding of life)\"),\n" +
-//                "(\"AUTHORITY (the right to lead or command)\"),\n" +
-//                "(\"A WORLD OF BEAUTY (beauty of nature and the arts)\"),\n" +
-//                "(\"SOCIAL JUSTICE (correcting injustice, care for the weak)\"),\n" +
-//                "(\"INDEPENDENT (self reliant, self sufficient)\"),\n" +
-//                "(\"MODERATE (avoiding extremes of feeling and action)\"),\n" +
-//                "(\"LOYAL (faithful to my friends, group)\"),\n" +
-//                "(\"AMBITIOUS (hard working, aspiring)\"),\n" +
-//                "(\"BROADMINDED (tolerant of different ideas and beliefs)\"),\n" +
-//                "(\"HUMBLE (modest, self effacing)\"),\n" +
-//                "(\"DARING (seeking adventure, risk)\"),\n" +
-//                "(\"PROTECTING THE ENVIRONMENT (preserving nature)\"),\n" +
-//                "(\"INFLUENTIAL (having an impact on people and events)\"),\n" +
-//                "(\"HONORING OF PARENTS AND ELDERS (showing respect)\"),\n" +
-//                "(\"CHOOSING OWN GOALS (selecting own purposes)\"),\n" +
-//                "(\"CAPABLE (competent, effective, efficient)\"),\n" +
-//                "(\"ACCEPTING MY PORTION IN LIFE (submitting to life\\'s circumstances)\"),\n" +
-//                "(\"HONEST (genuine, sincere)\"),\n" +
-//                "(\"PRESERVING MY PUBLIC IMAGE (protecting my \\\"face\\\")\"),\n" +
-//                "(\"OBEDIENT (dutiful, meeting obligations)\"),\n" +
-//                "(\"HELPFUL (working for the welfare of others)\"),\n" +
-//                "(\"ENJOYING LIFE (enjoying food, sex, leisure, etc.)\"),\n" +
-//                "(\"DEVOUT (holding to religious faith and belief)\"),\n" +
-//                "(\"RESPONSIBLE (dependable, reliable)\"),\n" +
-//                "(\"CURIOUS (interested in everything, exploring)\"),\n" +
-//                "(\"FORGIVING (willing to pardon others)\"),\n" +
-//                "(\"SUCCESSFUL (achieving goals)\"),\n" +
-//                "(\"CLEAN (neat, tidy)\"),\n" +
-//                "(\"SELF-INDULGENT (doing pleasant things)\");";
     }
 
     public List<Value> getValuesList () {

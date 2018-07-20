@@ -3,13 +3,21 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/idTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/notImportant"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/notImportant"
+        android:layout_marginTop="@dimen/survey_vertical_margin"
+        android:text="ID" />
+
+    <TextView
         android:id="@+id/valueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/notImportant"
-        android:layout_alignLeft="@id/notImportant"
-        android:layout_marginTop="@dimen/survey_vertical_margin"
+        android:layout_alignTop="@+id/idTextView"
+        android:layout_toEndOf="@+id/idTextView"
         android:text="Value" />
 
     <RadioGroup
@@ -17,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/valueTextView"
+        android:layout_below="@id/idTextView"
         android:orientation="horizontal">
 
         <RadioButton

@@ -6,26 +6,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import java.util.List;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ItemAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
-    private List<String> values;
+    private Map<Integer, String> valueMap = new HashMap<>();
 
-    public ItemAdapter(Context c, List<String> list) {
+    public ItemAdapter(Context c, Map<Integer, String> map) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        values = list;
+        valueMap = map;
     }
 
     @Override
     public int getCount() {
-        return values.size();
+        return valueMap.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return values.get(position);
+        return valueMap.get(position);
     }
 
     @Override
@@ -36,8 +38,12 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         View v = mInflater.inflate(R.layout.value_list_layout,null);
+        TextView idTextView = (TextView) v.findViewById(R.id.idTextView);
         TextView valueTextView = (TextView) v.findViewById(R.id.valueTextView);
-        valueTextView.setText(values.get(position));
+        String id = Integer.toString(position+1);
+        String value = valueMap.get(position);
+        idTextView.setText(id+". ");
+        valueTextView.setText(value);
 
         return v;
 
