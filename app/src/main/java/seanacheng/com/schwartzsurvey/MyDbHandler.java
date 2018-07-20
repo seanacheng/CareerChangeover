@@ -8,13 +8,14 @@ import android.database.Cursor;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyDbHandler extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "values_visualization.db";
-    public static final String TABLE_NAME = "value_survey";
+    private static final String TABLE_NAME = "value_survey";
     private static final String COLUMN_ID = "id";
-    public static final String COLUMN_VALUE = "value";
+    private static final String COLUMN_VALUE = "value";
     private static final String COLUMN_SELF_EVAL = "personal results";
     private static final String COLUMN_EMPLOYER_EVAL = "employer results";
     private static final int DATABASE_VERSION = 1;
@@ -24,28 +25,28 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase SQLiteDatabase) {
-        createSQLiteTable(SQLiteDatabase);
-        insertValues(SQLiteDatabase);
+    public void onCreate(SQLiteDatabase database) {
 
+        createSQLiteTable(database);
+        insertValues(database);
+        Log.d("tag", "onCreate: DbHandler");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
 
     private void createSQLiteTable(SQLiteDatabase SQLiteDatabase) {
         String createDB = "create table if not exists "+TABLE_NAME+"("+COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_VALUE+" text not null, "+COLUMN_SELF_EVAL+" integer default 0, "+COLUMN_EMPLOYER_EVAL+" integer default 0);";
-
         SQLiteDatabase.execSQL(createDB);
+        Log.d("tag", "createSQLiteTable ");
     }
 
     private void insertValues(SQLiteDatabase db) {
-        ContentValues values = new ContentValues();
+        Log.d("tag", "insertValues called");
 
-        String[] valuesList = { "EQUALITY (equal opportunity for all)",
+        String[] valuesArray = { "EQUALITY (equal opportunity for all)",
                                 "SOCIAL POWER (control over others, dominance)",
                                 "PLEASURE (gratification of desires)",
                                 "FREEDOM (freedom of action and thought)",
@@ -93,10 +94,13 @@ public class MyDbHandler extends SQLiteOpenHelper {
                                 "SELF-INDULGENT (doing pleasant things)"
         };
 
-        for (String value:valuesList) {
-            values.put(COLUMN_VALUE,value);
+        for (String valueString:valuesArray) {
+            Log.d("tag", "insertValues: "+valueString);
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_VALUE,valueString);
             db.insert(TABLE_NAME,null,values);
         }
+
 //        String insertValues = "insert into "+TABLE_NAME+" ("+COLUMN_VALUE+") values \n"+
 //                "(\"EQUALITY (equal opportunity for all)\"),\n" +
 //                "(\"SOCIAL POWER (control over others, dominance)\"),\n" +
@@ -146,8 +150,31 @@ public class MyDbHandler extends SQLiteOpenHelper {
 //                "(\"SELF-INDULGENT (doing pleasant things)\");";
     }
 
-    public void updateRank(String column, int id, int rank) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public List<Value> getValuesList () {
+        List<Value> values = new ArrayList<>();
+        String selectQuery = "select id, value from "+TABLE_NAME+";";
+        Log.d("tag", "getValuesList ");
 
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Value value = new Value();
+                value.setID(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+                value.setValue(cursor.getString(cursor.getColumnIndex(COLUMN_VALUE)));
+
+                values.add(value);
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        cursor.close();
+
+        return values;
     }
+
+//    public void updateRank(String column, int id, int rank) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//    }
 }

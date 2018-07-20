@@ -1,48 +1,40 @@
 package seanacheng.com.schwartzsurvey;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.ListView;
-import android.widget.RadioGroup;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
 
-import static seanacheng.com.schwartzsurvey.MyDbHandler.COLUMN_VALUE;
-import static seanacheng.com.schwartzsurvey.MyDbHandler.TABLE_NAME;
+public class SurveyActivity extends AppCompatActivity{
 
-public class SurveyActivity extends AppCompatActivity {
-
-    SQLiteOpenHelper SQLiteOpenHelper;
-    SQLiteDatabase SQLiteDatabase;
-    ItemAdapter ItemAdapter;
-    Context context;
+    MyDbHandler myDbHandler;
+    ItemAdapter itemAdapter;
     ListView listView;
-    Map<String,RadioGroup> valuesMap = new HashMap<String, RadioGroup>();
+    List<Value> valuesList = new LinkedList<>();
+    List<String> stringList = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
 
-        listView = (ListView) findViewById(R.id.surveyListView);
-        context = this;
+        myDbHandler = new MyDbHandler(this);
+        valuesList = myDbHandler.getValuesList();
+        Log.d("tag", "my list:"+valuesList.toString()+"end list");
 
-        ItemAdapter = new ItemAdapter(context,valuesMap);
-        listView.setAdapter(ItemAdapter);
+        for (Value v:valuesList) {
+            String valueStatement = v.getValue();
+            stringList.add(valueStatement);
+        }
 
-        SQLiteOpenHelper = new MyDbHandler(getApplicationContext());
+        listView = findViewById(R.id.surveyListView);
+        itemAdapter = new ItemAdapter(this,stringList);
+        listView.setAdapter(itemAdapter);
 
-        SQLiteDatabase = SQLiteOpenHelper.getReadableDatabase();
-        Cursor cursor = SQLiteDatabase.rawQuery("select "+ COLUMN_VALUE+" from "+ TABLE_NAME,null);
 
-        cursor.close();
 
     }
 

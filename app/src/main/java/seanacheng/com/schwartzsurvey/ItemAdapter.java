@@ -5,22 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ItemAdapter extends BaseAdapter {
 
-    LayoutInflater mInflator;
-    List<String> values;
+    private LayoutInflater mInflater;
+    private List<String> values;
 
-    public ItemAdapter(Context c, Map m) {
-        mInflator = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        values = new ArrayList<String>();
+    public ItemAdapter(Context c, List<String> list) {
+        mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        values = list;
+    }
 
+    @Override
+    public int getCount() {
+        return values.size();
     }
 
     @Override
@@ -34,13 +34,8 @@ public class ItemAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return values.size();
-    }
-
-    @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        View v = mInflator.inflate(R.layout.value_list_layout,null);
+        View v = mInflater.inflate(R.layout.value_list_layout,null);
         TextView valueTextView = (TextView) v.findViewById(R.id.valueTextView);
         valueTextView.setText(values.get(position));
 
