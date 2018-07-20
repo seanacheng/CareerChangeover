@@ -41,7 +41,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView idTextView = (TextView) v.findViewById(R.id.idTextView);
         TextView valueTextView = (TextView) v.findViewById(R.id.valueTextView);
         String id = Integer.toString(position+1);
-        String value = valueMap.get(position);
+        String value = valueMap.get(position+1);
         idTextView.setText(id+". ");
         valueTextView.setText(value);
 
