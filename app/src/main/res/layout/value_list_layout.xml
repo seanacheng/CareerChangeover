@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/idTextView"
         android:layout_toEndOf="@+id/idTextView"
+        android:layout_toRightOf="@id/idTextView"
         android:text="Value" />
 
     <RadioGroup

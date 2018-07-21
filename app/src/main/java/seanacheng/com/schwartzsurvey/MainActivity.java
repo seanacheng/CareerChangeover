@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         identify_my_values.setOnClickListener(this);
         identify_employer_values.setOnClickListener(this);
         view_results.setOnClickListener(this);
-        Log.d("tag", "onCreate");
     }
-
 
     @Override
     public void onClick(View view) {

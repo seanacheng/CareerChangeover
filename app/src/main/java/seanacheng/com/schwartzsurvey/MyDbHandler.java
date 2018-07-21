@@ -90,10 +90,9 @@ public class MyDbHandler extends SQLiteOpenHelper {
                                 "CLEAN (neat, tidy)",
                                 "SELF-INDULGENT (doing pleasant things)"
         };
+        ContentValues values = new ContentValues();
 
         for (String valueString:valuesArray) {
-            Log.d("tag", "insertValues: "+valueString);
-            ContentValues values = new ContentValues();
             values.put(COLUMN_VALUE,valueString);
             db.insert(TABLE_NAME,null,values);
         }
@@ -102,7 +101,6 @@ public class MyDbHandler extends SQLiteOpenHelper {
     public List<Value> getValuesList () {
         List<Value> values = new ArrayList<>();
         String selectQuery = "select id, value from "+TABLE_NAME+";";
-        Log.d("tag", "getValuesList ");
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -122,8 +120,24 @@ public class MyDbHandler extends SQLiteOpenHelper {
         return values;
     }
 
-//    public void updateRank(String column, int id, int rank) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//    }
+    public void updateRank(String column, Value value) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues content = new ContentValues();
+        String rank;
+
+        if (column.equals(COLUMN_SELF_EVAL))  {
+            rank = Integer.toString(value.getSelfRank());
+        } else if (column.equals(COLUMN_EMPLOYER_EVAL)) {
+            rank = Integer.toString(value.getEmployerRank());
+        } else {
+            rank = "0";
+        }
+
+        content.put(column,rank);
+        db.update(TABLE_NAME,content,COLUMN_ID+" = "+value.getID(),new String[]{String.valueOf(value.getID())});
+
+
+        db.close();
+
+    }
 }
