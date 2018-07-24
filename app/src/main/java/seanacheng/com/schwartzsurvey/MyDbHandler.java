@@ -16,8 +16,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "value_survey";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_VALUE = "value";
-    private static final String COLUMN_SELF_EVAL = "personal results";
-    private static final String COLUMN_EMPLOYER_EVAL = "employer results";
+    private static final String COLUMN_SELF_EVAL = "personal_results";
+    private static final String COLUMN_EMPLOYER_EVAL = "employer_results";
     private static final int DATABASE_VERSION = 1;
 
     public MyDbHandler(Context context) {
@@ -37,7 +37,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     private void createSQLiteTable(SQLiteDatabase SQLiteDatabase) {
         String createDB = "create table if not exists "+TABLE_NAME+"("+COLUMN_ID+" integer primary key autoincrement, "+
-                COLUMN_VALUE+" text not null, "+COLUMN_SELF_EVAL+" integer default 0, "+COLUMN_EMPLOYER_EVAL+" integer default 0);";
+                COLUMN_VALUE+" text not null, "+COLUMN_SELF_EVAL+" integer default -1, "+COLUMN_EMPLOYER_EVAL+" integer default 0);";
         SQLiteDatabase.execSQL(createDB);
     }
 
@@ -100,7 +100,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     public List<Value> getValuesList () {
         List<Value> values = new ArrayList<>();
-        String selectQuery = "select id, value from "+TABLE_NAME+";";
+        String selectQuery = "select * from "+TABLE_NAME+";";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -110,6 +110,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
                 Value value = new Value();
                 value.setID(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
                 value.setValue(cursor.getString(cursor.getColumnIndex(COLUMN_VALUE)));
+                value.setSelfRank(cursor.getInt(cursor.getColumnIndex(COLUMN_SELF_EVAL)));
+                value.setEmployerRank(cursor.getInt(cursor.getColumnIndex(COLUMN_EMPLOYER_EVAL)));
 
                 values.add(value);
             } while (cursor.moveToNext());
@@ -120,22 +122,16 @@ public class MyDbHandler extends SQLiteOpenHelper {
         return values;
     }
 
-    public void updateRank(String column, Value value) {
+    public void updateRank(List<Value> valuesList) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
-        String rank;
+        int rank=-1;
 
-        if (column.equals(COLUMN_SELF_EVAL))  {
-            rank = Integer.toString(value.getSelfRank());
-        } else if (column.equals(COLUMN_EMPLOYER_EVAL)) {
-            rank = Integer.toString(value.getEmployerRank());
-        } else {
-            rank = "0";
+        for (Value val:valuesList) {
+            rank = val.getSelfRank();
+            content.put(COLUMN_SELF_EVAL, rank);
+            db.update(TABLE_NAME, content, COLUMN_ID+"=?", new String[]{String.valueOf(val.getID())});
         }
-
-        content.put(column,rank);
-        db.update(TABLE_NAME,content,COLUMN_ID+" = "+value.getID(),new String[]{String.valueOf(value.getID())});
-
 
         db.close();
 

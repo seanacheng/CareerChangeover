@@ -21,6 +21,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     ItemAdapter itemAdapter;
     ListView listView;
     Button saveButton;
+    List<Value> valuesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,30 +29,25 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_survey);
 
         myDbHandler = new MyDbHandler(this);
-        List<Value> valuesList = myDbHandler.getValuesList();
+        valuesList = myDbHandler.getValuesList();
 
         listView = findViewById(R.id.surveyListView);
         itemAdapter = new ItemAdapter(this,valuesList);
         listView.setAdapter(itemAdapter);
-        Log.d("tag", "onCreate: setAdapter");
 
         saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
-
-        Log.d("tag", "onCreate: done");
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.saveButton:
-
+                valuesList = itemAdapter.getValuesList();
+                myDbHandler.updateRank(valuesList);
+                Intent save = new Intent(SurveyActivity.this,MainActivity.class);
+                startActivity(save);
+                break;
         }
-        Intent save = new Intent();
-        startActivity(save);
-    }
-
-    public void onRadioClick(View view) {
-
     }
 }
