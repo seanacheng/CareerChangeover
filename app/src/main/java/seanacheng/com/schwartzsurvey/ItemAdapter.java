@@ -15,11 +15,13 @@ public class ItemAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
     private List<Value> valuesList;
+    private String columnName;
 
 
-    public ItemAdapter(Context c, List<Value> list) {
+    public ItemAdapter(Context c, List<Value> list, String column) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         valuesList = list;
+        columnName = column;
     }
 
     @Override
@@ -46,30 +48,23 @@ public class ItemAdapter extends BaseAdapter {
         RadioGroup radioGroup = v.findViewById(R.id.rankRadioGroup);
         int radioChecked = checkRadioGroupClicked(position);
 
-        if (radioChecked > -1) {
-            switch (radioChecked) {
-                case 0:
-                    radioGroup.check(R.id.radio0);
-                    break;
-                case 1:
-                    radioGroup.check(R.id.radio1);
-                    break;
-                case 2:
-                    radioGroup.check(R.id.radio2);
-                    break;
-                case 3:
-                    radioGroup.check(R.id.radio3);
-                    break;
-                case 4:
-                    radioGroup.check(R.id.radio4);
-                    break;
-                case 5:
-                    radioGroup.check(R.id.radio5);
-                    break;
-                case 6:
-                    radioGroup.check(R.id.radio6);
-                    break;
-            }
+        switch (radioChecked) {
+            case -1:
+                break;
+            case 0: radioGroup.check(R.id.radio0);
+                break;
+            case 1: radioGroup.check(R.id.radio1);
+                break;
+            case 2: radioGroup.check(R.id.radio2);
+                break;
+            case 3: radioGroup.check(R.id.radio3);
+                break;
+            case 4: radioGroup.check(R.id.radio4);
+                break;
+            case 5: radioGroup.check(R.id.radio5);
+                break;
+            case 6: radioGroup.check(R.id.radio6);
+                break;
         }
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -77,25 +72,25 @@ public class ItemAdapter extends BaseAdapter {
             public void onCheckedChanged(RadioGroup group, int id) {
                 switch (id) {
                     case R.id.radio0:
-                        valuesList.get(position).setSelfRank(0);
+                        valuesList.get(position).setRank(0,columnName);
                         break;
                     case R.id.radio1:
-                        valuesList.get(position).setSelfRank(1);
+                        valuesList.get(position).setRank(1,columnName);
                         break;
                     case R.id.radio2:
-                        valuesList.get(position).setSelfRank(2);
+                        valuesList.get(position).setRank(2,columnName);
                         break;
                     case R.id.radio3:
-                        valuesList.get(position).setSelfRank(3);
+                        valuesList.get(position).setRank(3,columnName);
                         break;
                     case R.id.radio4:
-                        valuesList.get(position).setSelfRank(4);
+                        valuesList.get(position).setRank(4,columnName);
                         break;
                     case R.id.radio5:
-                        valuesList.get(position).setSelfRank(5);
+                        valuesList.get(position).setRank(5,columnName);
                         break;
                     case R.id.radio6:
-                        valuesList.get(position).setSelfRank(6);
+                        valuesList.get(position).setRank(6,columnName);
                         break;
                 }
             }
@@ -109,7 +104,7 @@ public class ItemAdapter extends BaseAdapter {
     }
 
     private int checkRadioGroupClicked (int position) {
-        return valuesList.get(position).getSelfRank();
+        return valuesList.get(position).getRank(columnName);
     }
 
     public List<Value> getValuesList() {

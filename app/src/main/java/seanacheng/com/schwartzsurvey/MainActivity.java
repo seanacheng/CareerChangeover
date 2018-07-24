@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button identify_my_values, identify_employer_values, view_results;
+    MyDbHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.take_self_survey:
-                Intent toSurveyMenu = new Intent(MainActivity.this,SurveyActivity.class);
-                startActivity(toSurveyMenu);
+                Intent toSelfEval = new Intent(MainActivity.this,SurveyActivity.class);
+                toSelfEval.putExtra("column_name", dbHandler.COLUMN_SELF_EVAL);
+                startActivity(toSelfEval);
                 break;
             case R.id.take_employer_survey:
+                Intent toEmployerEval = new Intent(MainActivity.this,SurveyActivity.class);
+                toEmployerEval.putExtra("column_name", dbHandler.COLUMN_EMPLOYER_EVAL);
+                startActivity(toEmployerEval);
                 break;
             case R.id.view_results:
                 break;

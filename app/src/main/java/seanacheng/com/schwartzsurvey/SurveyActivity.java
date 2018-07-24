@@ -4,16 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SurveyActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,17 +16,19 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     ListView listView;
     Button saveButton;
     List<Value> valuesList;
+    String column;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+        column = getIntent().getStringExtra("column_name");
 
         myDbHandler = new MyDbHandler(this);
         valuesList = myDbHandler.getValuesList();
 
         listView = findViewById(R.id.surveyListView);
-        itemAdapter = new ItemAdapter(this,valuesList);
+        itemAdapter = new ItemAdapter(this,valuesList,column);
         listView.setAdapter(itemAdapter);
 
         saveButton = findViewById(R.id.saveButton);
@@ -44,7 +40,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()) {
             case R.id.saveButton:
                 valuesList = itemAdapter.getValuesList();
-                myDbHandler.updateRank(valuesList);
+                myDbHandler.updateRank(valuesList,column);
                 Intent save = new Intent(SurveyActivity.this,MainActivity.class);
                 startActivity(save);
                 break;
