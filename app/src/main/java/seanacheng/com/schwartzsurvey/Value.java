@@ -9,11 +9,6 @@ public class Value {
 
     public Value() {}
 
-//    public Value(int ID, String value) {
-//        this.questionID = ID;
-//        this.value = value;
-//    }
-
     public int getID() {
         return questionID;
     }

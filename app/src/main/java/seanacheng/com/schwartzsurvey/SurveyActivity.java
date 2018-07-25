@@ -7,14 +7,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import java.util.List;
 
 public class SurveyActivity extends AppCompatActivity implements View.OnClickListener{
 
     MyDbHandler myDbHandler;
     ItemAdapter itemAdapter;
+    TextView footnote;
     ListView listView;
-    Button saveButton;
     List<Value> valuesList;
     String column;
 
@@ -24,15 +25,26 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_survey);
         column = getIntent().getStringExtra("column_name");
 
+        setFootnoteText();
+
         myDbHandler = new MyDbHandler(this);
         valuesList = myDbHandler.getValuesList();
 
-        listView = findViewById(R.id.surveyListView);
         itemAdapter = new ItemAdapter(this,valuesList,column);
+        listView = findViewById(R.id.surveyListView);
         listView.setAdapter(itemAdapter);
 
-        saveButton = findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(this);
+        findViewById(R.id.saveButton).setOnClickListener(this);
+
+    }
+
+    public void setFootnoteText() {
+        footnote = findViewById(R.id.surveyStatementTextView);
+        if (column.startsWith("personal")) {
+            footnote.setText(getResources().getString(R.string.personal_survey_statement));
+        } else if (column.startsWith("employer")) {
+            footnote.setText(getResources().getString(R.string.employer_survey_statement));
+        }
     }
 
     @Override

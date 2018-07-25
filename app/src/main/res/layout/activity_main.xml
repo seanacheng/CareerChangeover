@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/discover_your_values_text"
+        android:layout_marginTop="@dimen/discover_your_values_margin_top"
         android:text="@string/discover_your_values"
         android:textSize="@dimen/intro_text_size" />
 
@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/identify_employers_values_text"
+        android:layout_marginTop="@dimen/identify_employers_values_margin_top"
         android:text="@string/identify_employers_values"
         android:textSize="@dimen/intro_text_size" />
 
     <Button
-        android:id="@+id/take_self_survey"
+        android:id="@+id/takeSelfSurveyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -37,7 +37,7 @@
         android:text="@string/take_self_eval" />
 
     <Button
-        android:id="@+id/take_employer_survey"
+        android:id="@+id/takeEmployerSurveyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -46,12 +46,67 @@
         android:text="@string/take_employer_eval" />
 
     <Button
-        android:id="@+id/view_results"
+        android:id="@+id/viewResultsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/results_button"
         android:text="@string/view_results" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/introTextView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/radio_horizontal_margin"
+        android:scrollbarStyle="insideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/radio_horizontal_margin"
+            android:layout_marginLeft="@dimen/radio_horizontal_margin"
+            android:layout_marginRight="@dimen/radio_horizontal_margin"
+            android:layout_marginStart="@dimen/radio_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/discoverYourValuesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/discover_your_values_text"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/introTextView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/radio_horizontal_margin"
+        android:scrollbarStyle="insideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/radio_horizontal_margin"
+            android:layout_marginLeft="@dimen/radio_horizontal_margin"
+            android:layout_marginRight="@dimen/radio_horizontal_margin"
+            android:layout_marginStart="@dimen/radio_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/identifyYourEmployersValuesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/identify_employers_values_text"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
