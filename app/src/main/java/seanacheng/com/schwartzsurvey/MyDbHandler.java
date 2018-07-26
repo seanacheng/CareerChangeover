@@ -98,14 +98,15 @@ public class MyDbHandler extends SQLiteOpenHelper {
         }
     }
 
-    public List<Value> getValuesList () {
-        List<Value> values = new ArrayList<>();
+    public Value[] getValuesArray () {
+        Value[] values = new Value[46];
         String selectQuery = "select * from "+TABLE_NAME+";";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {
+            int i=0;
             do {
                 Value value = new Value();
                 value.setID(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
@@ -113,7 +114,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
                 value.setSelfRank(cursor.getInt(cursor.getColumnIndex(COLUMN_SELF_EVAL)));
                 value.setEmployerRank(cursor.getInt(cursor.getColumnIndex(COLUMN_EMPLOYER_EVAL)));
 
-                values.add(value);
+                values[i]=value;
+                i++;
             } while (cursor.moveToNext());
         }
         db.close();
@@ -122,12 +124,12 @@ public class MyDbHandler extends SQLiteOpenHelper {
         return values;
     }
 
-    public void updateRank(List<Value> valuesList, String col) {
+    public void updateRank(Value[] valuesArray, String col) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
         int rank=-1;
 
-        for (Value val:valuesList) {
+        for (Value val:valuesArray) {
             rank = val.getRank(col);
             content.put(col, rank);
             db.update(TABLE_NAME, content, COLUMN_ID+"=?", new String[]{String.valueOf(val.getID())});
@@ -137,8 +139,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     }
 
-//    public List<Result> calculateResults() {
-//        List<Value> values = getValuesList();
+//    public Result[] calculateResults() {
+//        Value[] values = getValuesArray();
 //        int[] conformity = {11,20,40,47};
 //        int[] tradition = {18,32,36,44,51};
 //        int[] benevolence = {33,45,49,52,54};

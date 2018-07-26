@@ -15,7 +15,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     ItemAdapter itemAdapter;
     TextView footnote;
     ListView listView;
-    List<Value> valuesList;
+    Value[] valuesArray;
     String column;
 
     @Override
@@ -27,9 +27,9 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         setFootnoteText();
 
         myDbHandler = new MyDbHandler(this);
-        valuesList = myDbHandler.getValuesList();
+        valuesArray = myDbHandler.getValuesArray();
 
-        itemAdapter = new ItemAdapter(this,valuesList,column);
+        itemAdapter = new ItemAdapter(this,valuesArray,column);
         listView = findViewById(R.id.surveyListView);
         listView.setAdapter(itemAdapter);
 
@@ -54,8 +54,8 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()) {
             case R.id.saveButton:
 
-                valuesList = itemAdapter.getValuesList();
-                myDbHandler.updateRank(valuesList,column);
+                valuesArray = itemAdapter.getValuesArray();
+                myDbHandler.updateRank(valuesArray,column);
 
                 if (column.startsWith("personal")) {
                     Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);

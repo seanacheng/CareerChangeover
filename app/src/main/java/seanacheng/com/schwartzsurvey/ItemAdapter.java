@@ -15,28 +15,29 @@ public class ItemAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
     private List<Value> valuesList;
+    private Value[] valuesArray;
     private String columnName;
 
 
-    public ItemAdapter(Context c, List<Value> list, String column) {
+    public ItemAdapter(Context c, Value[] array, String column) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        valuesList = list;
+        valuesArray = array;
         columnName = column;
     }
 
     @Override
     public int getCount() {
-        return valuesList.size();
+        return valuesArray.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return valuesList.get(position).getValue();
+        return valuesArray[position].getValue();
     }
 
     @Override
     public long getItemId(int position) {
-        return valuesList.get(position).getID();
+        return valuesArray[position].getID();
     }
 
 
@@ -72,31 +73,31 @@ public class ItemAdapter extends BaseAdapter {
             public void onCheckedChanged(RadioGroup group, int id) {
                 switch (id) {
                     case R.id.radio0:
-                        valuesList.get(position).setRank(0,columnName);
+                        valuesArray[position].setRank(0,columnName);
                         break;
                     case R.id.radio1:
-                        valuesList.get(position).setRank(1,columnName);
+                        valuesArray[position].setRank(1,columnName);
                         break;
                     case R.id.radio2:
-                        valuesList.get(position).setRank(2,columnName);
+                        valuesArray[position].setRank(2,columnName);
                         break;
                     case R.id.radio3:
-                        valuesList.get(position).setRank(3,columnName);
+                        valuesArray[position].setRank(3,columnName);
                         break;
                     case R.id.radio4:
-                        valuesList.get(position).setRank(4,columnName);
+                        valuesArray[position].setRank(4,columnName);
                         break;
                     case R.id.radio5:
-                        valuesList.get(position).setRank(5,columnName);
+                        valuesArray[position].setRank(5,columnName);
                         break;
                     case R.id.radio6:
-                        valuesList.get(position).setRank(6,columnName);
+                        valuesArray[position].setRank(6,columnName);
                         break;
                 }
             }
         });
         int id = (int) getItemId(position);
-        String value = valuesList.get(position).getValue();
+        String value = valuesArray[position].getValue();
         idTextView.setText(" "+id+". ");
         valueTextView.setText(value);
 
@@ -104,10 +105,10 @@ public class ItemAdapter extends BaseAdapter {
     }
 
     private int checkRadioGroupClicked (int position) {
-        return valuesList.get(position).getRank(columnName);
+        return valuesArray[position].getRank(columnName);
     }
 
-    public List<Value> getValuesList() {
-        return valuesList;
+    public Value[] getValuesArray() {
+        return valuesArray;
     }
 }
