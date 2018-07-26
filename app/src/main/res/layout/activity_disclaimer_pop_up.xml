@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisclaimerPopUp">
+
+
+    <TextView
+        android:id="@+id/disclaimerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disclaimer"
+        android:textStyle="bold"
+        android:textSize="@dimen/intro_text_size"
+        android:textColor="@color/colorAccentDark"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/disclaimer_txt_top_margin" />
+
+    <TextView
+        android:id="@+id/disclaimerTxtTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disclaimer_text"
+        android:textSize="@dimen/text_size"
+        android:layout_below="@id/disclaimerTextView"
+        android:layout_marginTop="@dimen/accept_btn_top_margin"
+        android:layout_marginLeft="@dimen/disclaimer_txt_horizontal_margin"
+        android:layout_marginRight="@dimen/disclaimer_txt_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/acceptButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accept"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/disclaimerTxtTextView"
+        android:layout_marginTop="@dimen/accept_btn_top_margin" />
+
+
+</RelativeLayout>

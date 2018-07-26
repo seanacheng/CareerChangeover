@@ -14,4 +14,8 @@
     <dimen name="radio_horizontal_margin">10dp</dimen>
     <dimen name="imp_lbl_width">55dp</dimen>
     <dimen name="imp_lbl_txt_size">12sp</dimen>
+
+    <dimen name="disclaimer_txt_top_margin">100dp</dimen>
+    <dimen name="disclaimer_txt_horizontal_margin">20dp</dimen>
+    <dimen name="accept_btn_top_margin">40dp</dimen>
 </resources>

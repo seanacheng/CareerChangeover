@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import java.util.List;
@@ -39,9 +38,12 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void setFootnoteText() {
+
         footnote = findViewById(R.id.surveyStatementTextView);
+
         if (column.startsWith("personal")) {
             footnote.setText(getResources().getString(R.string.personal_survey_statement));
+
         } else if (column.startsWith("employer")) {
             footnote.setText(getResources().getString(R.string.employer_survey_statement));
         }
@@ -51,10 +53,17 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.saveButton:
+
                 valuesList = itemAdapter.getValuesList();
                 myDbHandler.updateRank(valuesList,column);
-                Intent save = new Intent(SurveyActivity.this,MainActivity.class);
-                startActivity(save);
+
+                if (column.startsWith("personal")) {
+                    Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);
+                    startActivity(disclaimerPopUp);
+                } else {
+                    Intent save = new Intent(SurveyActivity.this,MainActivity.class);
+                    startActivity(save);
+                }
                 break;
         }
     }
