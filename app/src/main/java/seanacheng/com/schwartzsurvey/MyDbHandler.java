@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MyDbHandler extends SQLiteOpenHelper {
@@ -16,6 +17,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "value_survey";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_VALUE = "value";
+    private static final String COLUMN_DIMENSION = "dimension";
     public static final String COLUMN_SELF_EVAL = "personal_results";
     public static final String COLUMN_EMPLOYER_EVAL = "employer_results";
     private static final int DATABASE_VERSION = 1;
@@ -29,6 +31,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
         createSQLiteTable(database);
         insertValues(database);
+        insertValueDimensions(database);
     }
 
     @Override
@@ -36,14 +39,18 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     private void createSQLiteTable(SQLiteDatabase SQLiteDatabase) {
-        String createDB = "create table if not exists "+TABLE_NAME+"("+COLUMN_ID+" integer primary key autoincrement, "+
-                COLUMN_VALUE+" text not null, "+COLUMN_SELF_EVAL+" integer default -1, "+COLUMN_EMPLOYER_EVAL+" integer default -1);";
+        String createDB = "create table if not exists "+TABLE_NAME+"("+
+                COLUMN_ID+" integer primary key autoincrement, "+
+                COLUMN_VALUE+" text not null, "+
+                COLUMN_DIMENSION+" text not null, "+
+                COLUMN_SELF_EVAL+" integer default -1, "+
+                COLUMN_EMPLOYER_EVAL+" integer default -1);";
         SQLiteDatabase.execSQL(createDB);
     }
 
     private void insertValues(SQLiteDatabase db) {
 
-        String[] valuesArray = { "EQUALITY (equal opportunity for all)",
+        String[] valuesArray = {"EQUALITY (equal opportunity for all)",
                                 "SOCIAL POWER (control over others, dominance)",
                                 "PLEASURE (gratification of desires)",
                                 "FREEDOM (freedom of action and thought)",
@@ -88,12 +95,30 @@ public class MyDbHandler extends SQLiteOpenHelper {
                                 "FORGIVING (willing to pardon others)",
                                 "SUCCESSFUL (achieving goals)",
                                 "CLEAN (neat, tidy)",
-                                "SELF-INDULGENT (doing pleasant things)"
-        };
+                                "SELF-INDULGENT (doing pleasant things)"};
+
         ContentValues values = new ContentValues();
 
         for (String valueString:valuesArray) {
             values.put(COLUMN_VALUE,valueString);
+            db.insert(TABLE_NAME,null,values);
+        }
+    }
+
+    private void insertValueDimensions(SQLiteDatabase db) {
+        String[] valueDimensionsArray = {"universalism", "power","hedonism","self-direction",
+                "security","stimulation","conformity","power","security","security",
+                "self-direction","universalism","tradition","conformity","security","universalism",
+                "stimulation","universalism","power","universalism","universalism","self-direction",
+                "tradition","benevolence","achievement","universalism","tradition","stimulation",
+                "universalism","achievement","conformity","self-direction","achievement","tradition",
+                "benevolence","power","conformity","benevolence","hedonism","tradition","benevolence",
+                "self-direction","benevolence","achievement","security","hedonism"};
+
+        ContentValues values = new ContentValues();
+
+        for (String valueDimension:valueDimensionsArray) {
+            values.put(COLUMN_DIMENSION,valueDimension);
             db.insert(TABLE_NAME,null,values);
         }
     }
@@ -139,18 +164,4 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     }
 
-//    public Result[] calculateResults() {
-//        Value[] values = getValuesArray();
-//        int[] conformity = {11,20,40,47};
-//        int[] tradition = {18,32,36,44,51};
-//        int[] benevolence = {33,45,49,52,54};
-//        int[] universalism = {1,17,24,26,29,30,35,38};
-//        int[] self_direction = {5,16,31,41,53};
-//        int[] stimulation = {9,25,37};
-//        int[] hedonism = {4,50,57};
-//        int[] achievement = {34,39,43,55};
-//        int[] power = {3,12,27,46};
-//        int[] security = {8,13,15,22,56};
-//
-//    }
 }

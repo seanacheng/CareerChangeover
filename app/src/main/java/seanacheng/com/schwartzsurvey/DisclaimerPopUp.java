@@ -20,7 +20,6 @@ public class DisclaimerPopUp extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disclaimer_pop_up);
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
-
         checkBox = findViewById(R.id.disclaimerCheckBox);
 
         findViewById(R.id.acceptButton).setOnClickListener(this);

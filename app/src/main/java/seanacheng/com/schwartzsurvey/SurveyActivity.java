@@ -46,7 +46,6 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
 
         if (column.startsWith("personal")) {
             footnote.setText(getResources().getString(R.string.personal_survey_statement));
-
         } else if (column.startsWith("employer")) {
             footnote.setText(getResources().getString(R.string.employer_survey_statement));
         }
