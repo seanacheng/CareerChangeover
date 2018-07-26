@@ -24,7 +24,7 @@
         android:text="@string/disclaimer_text"
         android:textSize="@dimen/text_size"
         android:layout_below="@id/disclaimerTextView"
-        android:layout_marginTop="@dimen/accept_btn_top_margin"
+        android:layout_marginTop="@dimen/accept_btn_bottom_margin"
         android:layout_marginLeft="@dimen/disclaimer_txt_horizontal_margin"
         android:layout_marginRight="@dimen/disclaimer_txt_horizontal_margin"/>
 
@@ -34,8 +34,17 @@
         android:layout_height="wrap_content"
         android:text="@string/accept"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/disclaimerTxtTextView"
-        android:layout_marginTop="@dimen/accept_btn_top_margin" />
+        android:layout_above="@id/disclaimerCheckBox"
+        android:layout_marginBottom="@dimen/accept_btn_bottom_margin" />
+
+    <CheckBox
+        android:id="@+id/disclaimerCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/check_box_bottom_margin"
+        android:text="@string/disclaimer_check_box" />
 
 
 </RelativeLayout>

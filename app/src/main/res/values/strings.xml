@@ -21,4 +21,5 @@
     <string name="disclaimer">DISCLAIMER:</string>
     <string name="disclaimer_text">The information provided in this application is for educational and entertainment purposes only. The survey results are not intended to diagnose any disease or conditions, and may not be used by health care professionals to recommend a treatment. </string>
     <string name="accept">I Accept</string>
+    <string name="disclaimer_check_box">Do Not Show Again</string>
 </resources>

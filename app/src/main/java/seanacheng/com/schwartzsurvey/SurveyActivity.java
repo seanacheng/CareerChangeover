@@ -1,18 +1,21 @@
 package seanacheng.com.schwartzsurvey;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import java.util.List;
 
 public class SurveyActivity extends AppCompatActivity implements View.OnClickListener{
 
     MyDbHandler myDbHandler;
     ItemAdapter itemAdapter;
+    SharedPreferences mPref;
+    String disclaimerAcceptedPref = "disclaimerAccepted";
     TextView footnote;
     ListView listView;
     Value[] valuesArray;
@@ -57,12 +60,15 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                 valuesArray = itemAdapter.getValuesArray();
                 myDbHandler.updateRank(valuesArray,column);
 
-                if (column.startsWith("personal")) {
-                    Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);
-                    startActivity(disclaimerPopUp);
-                } else {
+                mPref = PreferenceManager.getDefaultSharedPreferences(this);
+                boolean doNotShowAgain = mPref.getBoolean(disclaimerAcceptedPref,false);
+
+                if (column.startsWith("employer") || doNotShowAgain) {
                     Intent save = new Intent(SurveyActivity.this,MainActivity.class);
                     startActivity(save);
+                } else {
+                    Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);
+                    startActivity(disclaimerPopUp);
                 }
                 break;
         }

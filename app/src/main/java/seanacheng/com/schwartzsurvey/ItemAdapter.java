@@ -9,12 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
 public class ItemAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
-    private List<Value> valuesList;
     private Value[] valuesArray;
     private String columnName;
 
