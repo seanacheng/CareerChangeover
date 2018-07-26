@@ -136,4 +136,19 @@ public class MyDbHandler extends SQLiteOpenHelper {
         db.close();
 
     }
+
+//    public List<Result> calculateResults() {
+//        List<Value> values = getValuesList();
+//        int[] conformity = {11,20,40,47};
+//        int[] tradition = {18,32,36,44,51};
+//        int[] benevolence = {33,45,49,52,54};
+//        int[] universalism = {1,17,24,26,29,30,35,38};
+//        int[] self_direction = {5,16,31,41,53};
+//        int[] stimulation = {9,25,37};
+//        int[] hedonism = {4,50,57};
+//        int[] achievement = {34,39,43,55};
+//        int[] power = {3,12,27,46};
+//        int[] security = {8,13,15,22,56};
+//
+//    }
 }
