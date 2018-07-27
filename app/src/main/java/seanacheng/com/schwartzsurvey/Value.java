@@ -4,8 +4,10 @@ public class Value {
 
     private int questionID;
     private String value;
+    private String dimension;
     private int selfRank;
     private int employerRank;
+
 
     public Value() {}
 
@@ -17,28 +19,8 @@ public class Value {
         return value;
     }
 
-    public void setID(int ID) {
-        this.questionID = ID;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public int getSelfRank() {
-        return selfRank;
-    }
-
-    public int getEmployerRank() {
-        return employerRank;
-    }
-
-    public void setSelfRank(int selfRank) {
-        this.selfRank = selfRank;
-    }
-
-    public void setEmployerRank(int employerRank) {
-        this.employerRank = employerRank;
+    public String getDimension() {
+        return dimension;
     }
 
     public int getRank(String column) {
@@ -49,6 +31,27 @@ public class Value {
             rank = employerRank;
         } else rank=-1;
         return rank;
+    }
+
+
+    public void setID(int ID) {
+        this.questionID = ID;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension;
+    }
+
+    public void setSelfRank(int selfRank) {
+        this.selfRank = selfRank;
+    }
+
+    public void setEmployerRank(int employerRank) {
+        this.employerRank = employerRank;
     }
 
     public void setRank(int rank, String column) {

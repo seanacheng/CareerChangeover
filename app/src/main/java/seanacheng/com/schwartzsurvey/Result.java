@@ -2,33 +2,51 @@ package seanacheng.com.schwartzsurvey;
 
 public class Result {
 
-    private String valueDimension;
-    private double personalResults;
-    private double employerResults;
+    private String dimension;
+    private double personalScore;
+    private double employerScore;
 
     public Result() {}
 
     public String getValueDimension() {
-        return valueDimension;
+        return dimension;
     }
 
     public void setValueDimension(String valueDimension) {
-        this.valueDimension = valueDimension;
+        this.dimension = valueDimension;
     }
 
-    public double getPersonalResults() {
-        return personalResults;
+    public double getPersonalScore() {
+        return personalScore;
     }
 
-    public void setPersonalResults(double personalResults) {
-        this.personalResults = personalResults;
+    public void setPersonalScore(double personalScore) {
+        this.personalScore = personalScore;
     }
 
-    public double getEmployerResults() {
-        return employerResults;
+    public double getEmployerScore() {
+        return employerScore;
     }
 
-    public void setEmployerResults(double employerResults) {
-        this.employerResults = employerResults;
+    public void setEmployerScore(double employerScore) {
+        this.employerScore = employerScore;
+    }
+
+    public double getScore(String column) {
+        double result;
+        if (column.startsWith("personal")) {
+            result = personalScore;
+        } else if (column.startsWith("employer")) {
+            result = employerScore;
+        } else result = -1;
+        return result;
+    }
+
+    public void setScore(double result, String column) {
+        if (column.startsWith("personal")) {
+            this.personalScore = result;
+        } else if (column.startsWith("employer")) {
+            this.employerScore = result;
+        }
     }
 }

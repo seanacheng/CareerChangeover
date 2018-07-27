@@ -44,7 +44,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView idTextView = v.findViewById(R.id.idTextView);
         TextView valueTextView = v.findViewById(R.id.valueTextView);
         RadioGroup radioGroup = v.findViewById(R.id.rankRadioGroup);
-        int radioChecked = checkRadioGroupClicked(position);
+        int radioChecked = valuesArray[position].getRank(columnName);
 
         switch (radioChecked) {
             case -1:
@@ -99,10 +99,6 @@ public class ItemAdapter extends BaseAdapter {
         valueTextView.setText(value);
 
         return v;
-    }
-
-    private int checkRadioGroupClicked (int position) {
-        return valuesArray[position].getRank(columnName);
     }
 
     public Value[] getValuesArray() {
