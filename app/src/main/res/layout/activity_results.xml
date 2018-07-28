@@ -45,18 +45,14 @@
                         android:id="@+id/valueDimensionColumn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/column_spacing_margin"
-                        android:layout_marginStart="@dimen/column_spacing_margin"
-                        android:layout_marginRight="@dimen/column_spacing_margin"
-                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="30dp"
                         android:text="@string/table_header_dimension" />
 
                     <TextView
                         android:id="@+id/personalScoreColumn"
-                        android:layout_width="@dimen/score_column_width"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/column_spacing_margin"
-                        android:layout_marginStart="@dimen/column_spacing_margin"
                         android:layout_marginRight="@dimen/column_spacing_margin"
                         android:layout_marginEnd="@dimen/column_spacing_margin"
                         android:gravity="center"
@@ -64,10 +60,8 @@
 
                     <TextView
                         android:id="@+id/employerScoreColumn"
-                        android:layout_width="@dimen/score_column_width"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/column_spacing_margin"
-                        android:layout_marginStart="@dimen/column_spacing_margin"
                         android:layout_marginRight="@dimen/column_spacing_margin"
                         android:layout_marginEnd="@dimen/column_spacing_margin"
                         android:gravity="center"

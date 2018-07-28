@@ -50,8 +50,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
         String createScoreTable = "create table if not exists "+TABLE_SCORE+"("+
                 COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_DIMENSION+" text not null, "+
-                COLUMN_PERSONAL_SCORE+" integer default -1, "+
-                COlUMN_EMPLOYER_SCORE+" integer default -1);";
+                COLUMN_PERSONAL_SCORE+" float default -1.0, "+
+                COlUMN_EMPLOYER_SCORE+" float default -1.0);";
         SQLiteDatabase.execSQL(createScoreTable);
     }
 
@@ -174,15 +174,16 @@ public class MyDbHandler extends SQLiteOpenHelper {
     public void calculateScore(Value[] valuesArray, String col) {
         Result[] resultsArray = getResultsArray();
         for (Result result:resultsArray) {
-            int rankSum = 0;
-            int num = 0;
+            double rankSum = 0;
+            double num = 0;
             for (Value value : valuesArray) {
                 if (result.getValueDimension().equals(value.getDimension())) {
                     rankSum += value.getRank(col);
                     num++;
                 }
             }
-            result.setScore(rankSum/num, col);
+            double avgRank = rankSum/num;
+            result.setScore(avgRank, col);
         }
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -214,8 +215,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
             do {
                 Result result = new Result();
                 result.setValueDimension(cursor.getString(cursor.getColumnIndex(COLUMN_DIMENSION)));
-                result.setPersonalScore(cursor.getInt(cursor.getColumnIndex(COLUMN_PERSONAL_SCORE)));
-                result.setEmployerScore(cursor.getInt(cursor.getColumnIndex(COlUMN_EMPLOYER_SCORE)));
+                result.setPersonalScore(cursor.getFloat(cursor.getColumnIndex(COLUMN_PERSONAL_SCORE)));
+                result.setEmployerScore(cursor.getFloat(cursor.getColumnIndex(COlUMN_EMPLOYER_SCORE)));
 
                 results[i]=result;
                 i++;

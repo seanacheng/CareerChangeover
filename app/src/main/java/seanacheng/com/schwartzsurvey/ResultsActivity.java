@@ -6,6 +6,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class ResultsActivity extends AppCompatActivity {
 
     String[] resultTableHeaders;
@@ -25,6 +27,9 @@ public class ResultsActivity extends AppCompatActivity {
         resultTableHeaders = getResources().getStringArray(R.array.resultTableHeaders);
         dimensionGoals = getResources().getStringArray(R.array.dimensionMotivationalGoals);
 
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        String score;
+
         for (int i=0;i<resultsArray.length;i++) {
             TableRow tableRow = new TableRow(this);
 
@@ -34,11 +39,13 @@ public class ResultsActivity extends AppCompatActivity {
             tableRow.addView(dimension);
 
             TextView personalScore = new TextView(this);
-            personalScore.setText(Double.toString(resultsArray[i].getPersonalScore()));
+            score = decimalFormat.format(resultsArray[i].getPersonalScore());
+            personalScore.setText(score);
             tableRow.addView(personalScore);
 
             TextView employerScore = new TextView(this);
-            employerScore.setText(Double.toString(resultsArray[i].getEmployerScore()));
+            score = decimalFormat.format(resultsArray[i].getEmployerScore());
+            employerScore.setText(score);
             tableRow.addView(employerScore);
 
 //            TextView description = new TextView(this);
