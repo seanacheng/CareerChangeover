@@ -69,6 +69,8 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                     Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);
                     startActivity(disclaimerPopUp);
                 }
+                myDbHandler.calculateScore(valuesArray,column);
+
                 break;
         }
     }

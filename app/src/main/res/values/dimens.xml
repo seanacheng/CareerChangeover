@@ -19,4 +19,9 @@
     <dimen name="disclaimer_txt_horizontal_margin">20dp</dimen>
     <dimen name="accept_btn_bottom_margin">20dp</dimen>
     <dimen name="check_box_bottom_margin">60dp</dimen>
+
+    <dimen name="table_top_margin">30dp</dimen>
+    <dimen name="header_row_vertical_margin">5dp</dimen>
+    <dimen name="column_spacing_margin">20dp</dimen>
+    <dimen name="score_column_width">60dp</dimen>
 </resources>

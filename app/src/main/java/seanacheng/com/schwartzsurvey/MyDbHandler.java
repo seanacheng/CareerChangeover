@@ -30,7 +30,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
 
-        createSQLiteTable(database);
+        createSQLiteTables(database);
         insertValues(database);
 
     }
@@ -38,21 +38,21 @@ public class MyDbHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
 
-    private void createSQLiteTable(SQLiteDatabase SQLiteDatabase) {
-        String createDB = "create table if not exists "+TABLE_RANK+"("+
+    private void createSQLiteTables(SQLiteDatabase SQLiteDatabase) {
+        String createRankTable = "create table if not exists "+TABLE_RANK+"("+
                 COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_VALUE+" text not null, "+
                 COLUMN_DIMENSION+" text not null, "+
                 COLUMN_SELF_EVAL+" integer default -1, "+
                 COLUMN_EMPLOYER_EVAL+" integer default -1);";
-        SQLiteDatabase.execSQL(createDB);
+        SQLiteDatabase.execSQL(createRankTable);
 
-        String createDB2 = "create table if not exists "+TABLE_SCORE+"("+
+        String createScoreTable = "create table if not exists "+TABLE_SCORE+"("+
                 COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_DIMENSION+" text not null, "+
                 COLUMN_PERSONAL_SCORE+" integer default -1, "+
                 COlUMN_EMPLOYER_SCORE+" integer default -1);";
-        SQLiteDatabase.execSQL(createDB2);
+        SQLiteDatabase.execSQL(createScoreTable);
     }
 
     private void insertValues(SQLiteDatabase db) {
@@ -104,14 +104,13 @@ public class MyDbHandler extends SQLiteOpenHelper {
                                 "CLEAN (neat, tidy)",
                                 "SELF-INDULGENT (doing pleasant things)"};
 
-        String[] valueDimensionsArray = {"universalism", "power","hedonism","self-direction",
-                "security","stimulation","conformity","power","security","security",
-                "self-direction","universalism","tradition","conformity","security","universalism",
-                "stimulation","universalism","power","universalism","universalism","self-direction",
-                "tradition","benevolence","achievement","universalism","tradition","stimulation",
-                "universalism","achievement","conformity","self-direction","achievement","tradition",
-                "benevolence","power","conformity","benevolence","hedonism","tradition","benevolence",
-                "self-direction","benevolence","achievement","security","hedonism"};
+        String[] valueDimensionsArray = {"universalism","power","hedonism","self-direction","security",
+                "stimulation","conformity","power","security","security","self-direction","universalism",
+                "tradition","conformity","security","universalism", "stimulation","universalism","power",
+                "universalism","universalism","self-direction","tradition","benevolence","achievement",
+                "universalism","tradition","stimulation", "universalism","achievement","conformity",
+                "self-direction","achievement","tradition", "benevolence","power","conformity","benevolence",
+                "hedonism","tradition","benevolence","self-direction","benevolence","achievement","security","hedonism"};
 
         String[] dimensionsArray = {"conformity","tradition","benevolence","universalism","self-direction",
                 "stimulation","hedonism","achievement","power","security"};
@@ -123,6 +122,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
             values.put(COLUMN_DIMENSION,valueDimensionsArray[i]);
             db.insert(TABLE_RANK,null,values);
         }
+
+        values.clear();
 
         for (String dimension:dimensionsArray) {
             values.put(COLUMN_DIMENSION,dimension);
@@ -160,7 +161,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     public void updateRank(Value[] valuesArray, String col) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
-        int rank=-1;
+        int rank;
 
         for (Value val:valuesArray) {
             rank = val.getRank(col);
@@ -170,7 +171,8 @@ public class MyDbHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void calculateScore(Value[] valuesArray, Result[] resultsArray, String col) {
+    public void calculateScore(Value[] valuesArray, String col) {
+        Result[] resultsArray = getResultsArray();
         for (Result result:resultsArray) {
             int rankSum = 0;
             int num = 0;

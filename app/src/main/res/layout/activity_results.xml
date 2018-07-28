@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsActivity">
+
+    <TextView
+        android:id="@+id/resultsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/survey_statement_top_margin"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/intro_text_size"
+        android:text="@string/results" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/resultsTextView"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:id="@+id/scrollViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/disclaimer_txt_horizontal_margin"
+            android:layout_marginRight="@dimen/disclaimer_txt_horizontal_margin"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/table_top_margin">
+
+                <TableRow
+                    android:id="@+id/headerRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/header_row_vertical_margin"
+                    android:layout_marginTop="@dimen/header_row_vertical_margin">
+
+                    <TextView
+                        android:id="@+id/valueDimensionColumn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/column_spacing_margin"
+                        android:layout_marginStart="@dimen/column_spacing_margin"
+                        android:layout_marginRight="@dimen/column_spacing_margin"
+                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:text="@string/table_header_dimension" />
+
+                    <TextView
+                        android:id="@+id/personalScoreColumn"
+                        android:layout_width="@dimen/score_column_width"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/column_spacing_margin"
+                        android:layout_marginStart="@dimen/column_spacing_margin"
+                        android:layout_marginRight="@dimen/column_spacing_margin"
+                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:gravity="center"
+                        android:text="@string/table_header_personal_score" />
+
+                    <TextView
+                        android:id="@+id/employerScoreColumn"
+                        android:layout_width="@dimen/score_column_width"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/column_spacing_margin"
+                        android:layout_marginStart="@dimen/column_spacing_margin"
+                        android:layout_marginRight="@dimen/column_spacing_margin"
+                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:gravity="center"
+                        android:text="@string/table_header_employer_score" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

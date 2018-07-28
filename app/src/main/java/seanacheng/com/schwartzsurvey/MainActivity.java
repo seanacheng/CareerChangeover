@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(toEmployerEval);
                 break;
             case R.id.viewResultsButton:
+                Intent toResults = new Intent(MainActivity.this,ResultsActivity.class);
+                startActivity(toResults);
                 break;
         }
     }
