@@ -10,44 +10,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/survey_statement_top_margin"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/table_top_margin"
+        android:layout_marginStart="@dimen/table_top_margin"
         android:textSize="@dimen/intro_text_size"
         android:text="@string/results" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/resultsTextView"
+        android:layout_marginTop="70dp"
         android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
             android:id="@+id/scrollViewLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/disclaimer_txt_horizontal_margin"
-            android:layout_marginRight="@dimen/disclaimer_txt_horizontal_margin"
             android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/radarChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/table_top_margin">
+                android:layout_marginTop="@dimen/table_top_margin"
+                android:layout_marginBottom="@dimen/table_top_margin"
+                android:layout_marginLeft="@dimen/table_top_margin"
+                android:layout_marginStart="@dimen/table_top_margin" >
 
                 <TableRow
                     android:id="@+id/headerRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/header_row_vertical_margin"
-                    android:layout_marginTop="@dimen/header_row_vertical_margin">
+                    android:layout_marginTop="@dimen/header_row_vertical_margin" >
 
                     <TextView
                         android:id="@+id/valueDimensionColumn"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:text="@string/table_header_dimension" />
+                        android:layout_height="match_parent" />
 
                     <TextView
                         android:id="@+id/personalScoreColumn"
