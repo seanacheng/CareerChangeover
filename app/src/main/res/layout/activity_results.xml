@@ -5,19 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ResultsActivity">
 
-    <TextView
-        android:id="@+id/resultsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/survey_statement_top_margin"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/intro_text_size"
-        android:text="@string/results" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/resultsTextView"
         android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
@@ -25,6 +15,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resultsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/survey_statement_top_margin"
+                android:layout_gravity="center"
+                android:textSize="@dimen/intro_text_size"
+                android:text="@string/results" />
 
             <com.github.mikephil.charting.charts.RadarChart
                 android:id="@+id/radarChart"
@@ -35,7 +34,9 @@
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/table_top_margin">
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/table_top_margin"
+                android:layout_marginBottom="30dp">
 
                 <TableRow
                     android:id="@+id/headerRow"
@@ -47,28 +48,27 @@
                     <TextView
                         android:id="@+id/valueDimensionColumn"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:text="@string/table_header_dimension" />
+                        android:layout_height="match_parent" />
 
                     <TextView
                         android:id="@+id/personalScoreColumn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginRight="@dimen/column_spacing_margin"
-                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:layout_marginLeft="@dimen/column_spacing_margin"
+                        android:layout_marginStart="@dimen/column_spacing_margin"
                         android:gravity="center"
-                        android:text="@string/table_header_personal_score" />
+                        android:text="@string/table_header_personal_score"
+                        android:textSize="@dimen/text_size"/>
 
                     <TextView
                         android:id="@+id/employerScoreColumn"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginRight="@dimen/column_spacing_margin"
-                        android:layout_marginEnd="@dimen/column_spacing_margin"
+                        android:layout_marginLeft="@dimen/column_spacing_margin"
+                        android:layout_marginStart="@dimen/column_spacing_margin"
                         android:gravity="center"
-                        android:text="@string/table_header_employer_score" />
+                        android:text="@string/table_header_employer_score"
+                        android:textSize="@dimen/text_size"/>
 
                 </TableRow>
 
@@ -77,6 +77,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>

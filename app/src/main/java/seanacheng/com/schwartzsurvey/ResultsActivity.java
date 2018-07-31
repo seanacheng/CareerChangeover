@@ -1,13 +1,17 @@
 package seanacheng.com.schwartzsurvey;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.WindowManager;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
+//
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
@@ -17,10 +21,13 @@ import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -28,6 +35,7 @@ public class ResultsActivity extends AppCompatActivity {
     String[] dimensionGoals;
     Result[] resultsArray;
     MyDbHandler myDbHandler;
+    RadarData data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +48,13 @@ public class ResultsActivity extends AppCompatActivity {
         resultTableHeaders = getResources().getStringArray(R.array.resultTableHeaders);
 
         RadarChart chart = findViewById(R.id.radarChart);
-        RadarData data = new RadarData(createDataSet());
-        data.setValueTextSize(8f);
-        data.setDrawValues(false);
+        createDataSet();
 
         chart.setWebAlpha(100);
         chart.getDescription().setEnabled(false);
         chart.setRotationEnabled(false);
+        chart.setMinimumWidth(getScreenResolution(this).get("width"));
+        chart.setMinimumHeight(getScreenResolution(this).get("width"));
         chart.setData(data);
         chart.invalidate();
 
@@ -65,9 +73,9 @@ public class ResultsActivity extends AppCompatActivity {
     private void setChartAxes(RadarChart chart) {
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setTextSize(12f);
-//        xAxis.setXOffset(0);
-//        xAxis.setYOffset(0);
+        xAxis.setTextSize(14);
+        xAxis.setXOffset(0);
+        xAxis.setYOffset(0);
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
@@ -89,20 +97,38 @@ public class ResultsActivity extends AppCompatActivity {
 //        yAxis.setTextSize(8f);
         yAxis.setDrawLabels(false);
     }
-    private RadarDataSet createDataSet() {
-        List<RadarEntry> entryArrayList = new ArrayList<>();
+    private void createDataSet() {
+        List<RadarEntry> personalEntryArrayList = new ArrayList<>();
+        List<RadarEntry> employerEntryArrayList = new ArrayList<>();
 
         for (int i=0;i<resultsArray.length;i++) {
-            RadarEntry entry = new RadarEntry((float) resultsArray[i].getPersonalScore());
-            entryArrayList.add(entry);
+            RadarEntry personalEntry = new RadarEntry((float) resultsArray[i].getPersonalScore());
+            personalEntryArrayList.add(personalEntry);
+            RadarEntry employerEntry = new RadarEntry((float) resultsArray[i].getEmployerScore());
+            employerEntryArrayList.add(employerEntry);
         }
 
-        RadarDataSet dataSet = new RadarDataSet(entryArrayList,"Personal Score");
-        dataSet.setColor(R.color.darkPurple);
-        dataSet.setFillColor(R.color.darkPurple);
-        dataSet.setDrawFilled(true);
-        dataSet.setFillAlpha(180);
-        return dataSet;
+        RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList,"Personal Score");
+        dataSet1.setColor(Color.GREEN);
+        dataSet1.setFillColor(Color.GREEN);
+        dataSet1.setDrawFilled(true);
+        dataSet1.setFillAlpha(180);
+        dataSet1.setDrawHighlightCircleEnabled(true);
+
+        RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList,"Employer Score");
+        dataSet2.setColor(Color.RED);
+        dataSet2.setFillColor(Color.RED);
+        dataSet2.setDrawFilled(true);
+        dataSet2.setFillAlpha(180);
+        dataSet2.setDrawHighlightCircleEnabled(true);
+
+        ArrayList<IRadarDataSet> list = new ArrayList<>();
+        list.add(dataSet1);
+        list.add(dataSet2);
+
+        data = new RadarData(list);
+        data.setValueTextSize(8f);
+        data.setDrawValues(false);
     }
 
     private void fillInTableRows() {
@@ -115,27 +141,41 @@ public class ResultsActivity extends AppCompatActivity {
 
             TextView dimension = new TextView(this);
             dimension.setText(resultsArray[i].getValueDimension());
+            dimension.setTextSize(16);
             dimension.setMinHeight(10);
-            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) dimension.getLayoutParams();
-            params.setMargins(0,0,3,0);
             tableRow.addView(dimension);
 
             TextView personalScore = new TextView(this);
             score = decimalFormat.format(resultsArray[i].getPersonalScore());
             personalScore.setText(score);
+            personalScore.setTextSize(16);
+            personalScore.setGravity(Gravity.RIGHT);
             tableRow.addView(personalScore);
 
             TextView employerScore = new TextView(this);
             score = decimalFormat.format(resultsArray[i].getEmployerScore());
             employerScore.setText(score);
+            employerScore.setTextSize(16);
+            employerScore.setGravity(Gravity.RIGHT);
             tableRow.addView(employerScore);
-
-//            TextView description = new TextView(this);
-//            description.setText(dimensionGoals[i]);
-//            tableRow.addView(description);
 
             tableLayout.addView(tableRow);
 
         }
+    }
+
+    private static Map<String, Integer> getScreenResolution(Context context)
+    {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        DisplayMetrics metrics = new DisplayMetrics();
+        display.getMetrics(metrics);
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("width",width);
+        map.put("height",height);
+        return map;
     }
 }
