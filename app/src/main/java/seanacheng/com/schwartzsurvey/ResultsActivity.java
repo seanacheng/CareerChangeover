@@ -44,14 +44,9 @@ public class ResultsActivity extends AppCompatActivity {
         data.setValueTextSize(8f);
         data.setDrawValues(false);
 
-//        chart.setWebLineWidth(1f);
         chart.setWebAlpha(100);
         chart.getDescription().setEnabled(false);
         chart.setRotationEnabled(false);
-//        chart.setMinimumWidth(1000);
-//        chart.setMinimumHeight(1000);
-//        chart.setScaleX(2);
-//        chart.setScaleY(2);
         chart.setData(data);
         chart.invalidate();
 
@@ -62,8 +57,6 @@ public class ResultsActivity extends AppCompatActivity {
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         legend.setDrawInside(true);
-//        legend.setXEntrySpace(5f);
-//        legend.setYEntrySpace(5f);
 
         dimensionGoals = getResources().getStringArray(R.array.dimensionMotivationalGoals);
         fillInTableRows();
@@ -109,7 +102,6 @@ public class ResultsActivity extends AppCompatActivity {
         dataSet.setFillColor(R.color.darkPurple);
         dataSet.setDrawFilled(true);
         dataSet.setFillAlpha(180);
-//        dataSet.setLineWidth(2f);
         return dataSet;
     }
 

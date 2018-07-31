@@ -10,15 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/survey_statement_top_margin"
-        android:layout_marginLeft="@dimen/table_top_margin"
-        android:layout_marginStart="@dimen/table_top_margin"
+        android:layout_centerHorizontal="true"
         android:textSize="@dimen/intro_text_size"
         android:text="@string/results" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_below="@id/resultsTextView"
         android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
@@ -36,22 +35,22 @@
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/table_top_margin"
-                android:layout_marginBottom="@dimen/table_top_margin"
-                android:layout_marginLeft="@dimen/table_top_margin"
-                android:layout_marginStart="@dimen/table_top_margin" >
+                android:layout_marginTop="@dimen/table_top_margin">
 
                 <TableRow
                     android:id="@+id/headerRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/header_row_vertical_margin"
-                    android:layout_marginTop="@dimen/header_row_vertical_margin" >
+                    android:layout_marginTop="@dimen/header_row_vertical_margin">
 
                     <TextView
                         android:id="@+id/valueDimensionColumn"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/table_header_dimension" />
 
                     <TextView
                         android:id="@+id/personalScoreColumn"
