@@ -3,9 +3,9 @@
     <dimen name="discover_your_values_margin_top">20dp</dimen>
     <dimen name="identify_employers_values_margin_top">180dp</dimen>
     <dimen name="intro_text_size">24sp</dimen>
-    <dimen name="self_survey_button">120dp</dimen>
-    <dimen name="employer_survey_button">70dp</dimen>
-    <dimen name="results_button">20dp</dimen>
+    <dimen name="self_survey_button">180dp</dimen>
+    <dimen name="employer_survey_button">125dp</dimen>
+    <dimen name="results_button">70dp</dimen>
 
     <dimen name="survey_statement_top_margin">30dp</dimen>
     <dimen name="list_view_top_margin">75dp</dimen>

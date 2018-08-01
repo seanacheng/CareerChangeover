@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-//
+
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
@@ -39,7 +39,14 @@ public class ResultsActivity extends AppCompatActivity {
     RadarData data;
     RadarChart chart;
     Legend legend;
-    String resultsToView = "both";
+
+    String both;
+    String personalOnly;
+    String employerOnly;
+    String resultsToView;
+
+    String personalScore;
+    String employerScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +56,15 @@ public class ResultsActivity extends AppCompatActivity {
         myDbHandler = new MyDbHandler(this);
         resultsArray = myDbHandler.getResultsArray();
 
+        both = getResources().getString(R.string.both);
+        personalOnly = getResources().getString(R.string.personal_only);
+        employerOnly = getResources().getString(R.string.employer_only);
+        resultsToView = both;
+        personalScore = getResources().getString(R.string.table_header_personal_score);
+        employerScore = getResources().getString(R.string.table_header_employer_score);
+
         chart = findViewById(R.id.radarChart);
         createDataSet();
-        Log.d("tag", "onCreate: both");
 
         chart.setWebAlpha(100);
         chart.getDescription().setEnabled(false);
@@ -83,17 +96,17 @@ public class ResultsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.both:
-                resultsToView = "both";
+                resultsToView = both;
                 createDataSet();
                 fillInTableRows();
                 break;
             case R.id.personalOnly:
-                resultsToView = "personal";
+                resultsToView = personalOnly;
                 createDataSet();
                 fillInTableRows();
                 break;
             case R.id.employerOnly:
-                resultsToView = "employer";
+                resultsToView = employerOnly;
                 createDataSet();
                 fillInTableRows();
                 break;
@@ -141,8 +154,9 @@ public class ResultsActivity extends AppCompatActivity {
 
         ArrayList<IRadarDataSet> list = new ArrayList<>();
 
-        if (!resultsToView.equals("employer")) {
-            RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList,"Personal Score");
+        if (!resultsToView.equals(employerOnly)) {
+
+            RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList,personalScore);
             dataSet1.setColor(Color.GREEN);
             dataSet1.setFillColor(Color.GREEN);
             dataSet1.setDrawFilled(true);
@@ -151,8 +165,9 @@ public class ResultsActivity extends AppCompatActivity {
             list.add(dataSet1);
         }
 
-        if (!resultsToView.equals("personal")) {
-            RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList,"Employer Score");
+        if (!resultsToView.equals(personalOnly)) {
+
+            RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList,employerScore);
             dataSet2.setColor(Color.RED);
             dataSet2.setFillColor(Color.RED);
             dataSet2.setDrawFilled(true);
@@ -176,30 +191,30 @@ public class ResultsActivity extends AppCompatActivity {
         String score;
 
         TableRow.LayoutParams params = new TableRow.LayoutParams();
-        params.setMargins((int) getResources().getDimension(R.dimen.column_spacing_margin),0,0,0);
+        int columnSpacing = (int) getResources().getDimension(R.dimen.column_spacing_margin);
+        params.setMargins(columnSpacing,0,0,0);
 
         TableRow headerRow = new TableRow(this);
         TextView dimensionHeader = new TextView(this);
         headerRow.addView(dimensionHeader);
 
-        if (!resultsToView.equals("employer")) {
+        if (!resultsToView.equals(employerOnly)) {
             TextView personalScoreHeader = new TextView(this);
-            personalScoreHeader.setText(getResources().getString(R.string.table_header_personal_score));
+            personalScoreHeader.setText(personalScore);
             personalScoreHeader.setTextSize(16);
             personalScoreHeader.setGravity(Gravity.CENTER);
             personalScoreHeader.setLayoutParams(params);
             headerRow.addView(personalScoreHeader);
         }
 
-        if (!resultsToView.equals("personal")) {
+        if (!resultsToView.equals(personalOnly)) {
             TextView employerScoreHeader = new TextView(this);
-            employerScoreHeader.setText(getResources().getString(R.string.table_header_employer_score));
+            employerScoreHeader.setText(employerScore);
             employerScoreHeader.setTextSize(16);
             employerScoreHeader.setGravity(Gravity.CENTER);
             employerScoreHeader.setLayoutParams(params);
             headerRow.addView(employerScoreHeader);
         }
-
 
         tableLayout.addView(headerRow);
 
@@ -212,7 +227,7 @@ public class ResultsActivity extends AppCompatActivity {
             dimension.setMinHeight(10);
             tableRow.addView(dimension);
 
-            if (!resultsToView.equals("employer")) {
+            if (!resultsToView.equals(employerOnly)) {
                 TextView personalScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getPersonalScore());
                 personalScore.setText(score);
@@ -221,7 +236,7 @@ public class ResultsActivity extends AppCompatActivity {
                 tableRow.addView(personalScore);
             }
 
-            if (!resultsToView.equals("personal")) {
+            if (!resultsToView.equals(personalOnly)) {
                 TextView employerScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getEmployerScore());
                 employerScore.setText(score);
