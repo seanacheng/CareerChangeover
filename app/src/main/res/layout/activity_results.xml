@@ -27,50 +27,18 @@
 
             <com.github.mikephil.charting.charts.RadarChart
                 android:id="@+id/radarChart"
-                android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/table_top_margin"
-                android:layout_marginBottom="30dp">
-
-                <TableRow
-                    android:id="@+id/headerRow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/header_row_vertical_margin"
-                    android:layout_marginTop="@dimen/header_row_vertical_margin">
-
-                    <TextView
-                        android:id="@+id/valueDimensionColumn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/personalScoreColumn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/column_spacing_margin"
-                        android:layout_marginStart="@dimen/column_spacing_margin"
-                        android:gravity="center"
-                        android:text="@string/table_header_personal_score"
-                        android:textSize="@dimen/text_size"/>
-
-                    <TextView
-                        android:id="@+id/employerScoreColumn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/column_spacing_margin"
-                        android:layout_marginStart="@dimen/column_spacing_margin"
-                        android:gravity="center"
-                        android:text="@string/table_header_employer_score"
-                        android:textSize="@dimen/text_size"/>
-
-                </TableRow>
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/table_left_margin"
+                android:layout_marginLeft="@dimen/table_left_margin"
+                android:layout_marginTop="@dimen/table_vertical_margin"
+                android:layout_marginBottom="@dimen/table_vertical_margin">
 
             </TableLayout>
 

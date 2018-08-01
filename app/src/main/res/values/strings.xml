@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Values Visualization</string>
+    <string name="app_name">Values Visualizer</string>
     <string name="discover_your_values">Discover Your Values</string>
     <string name="discover_your_values_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own personal values may help navigate professional development at a suitable company. Just click on SURVEY MY VALUES to find out your personal values!</string>
     <string name="identify_employers_values">Identify Your Employer\'s Values</string>
@@ -27,12 +27,10 @@
     <string name="table_header_dimension">Dimension</string>
     <string name="table_header_personal_score">Personal Score</string>
     <string name="table_header_employer_score">Employer Score</string>
-    <string-array name="resultTableHeaders">
-        <item>Dimension</item>
-        <item>Description</item>
-        <item>Personal Score</item>
-        <item>Employer Score</item>
-    </string-array>
+    <string name="both">Both</string>
+    <string name="personal_only">Personal Only</string>
+    <string name="employer_only">Employer Only</string>
+
     <string-array name="dimensionMotivationalGoals">
         <item>Restraint of actions that could upset others or violate societal norms</item>
         <item>Respect, commitment and acceptance of the customs and ideas originating from one’s culture/religion</item>
