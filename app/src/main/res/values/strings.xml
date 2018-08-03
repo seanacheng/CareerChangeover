@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">Values Visualizer</string>
     <string name="discover_your_values">Discover Your Values</string>
-    <string name="discover_your_values_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own personal values may help navigate professional development at a suitable company. Just click on SURVEY MY VALUES to find out your personal values!</string>
+    <string name="discover_your_values_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own personal values may help navigate professional development at a suitable company.</string>
     <string name="identify_employers_values">Identify Your Employer\'s Values</string>
-    <string name="identify_employers_values_text">Companies differ by their corporate cultures which are usually conveyed by corporate values statements. Yet, the real sense of a corporate culture at a particular company may be captured through subjective personal feel. This perception we might get at informational/job interviews and while networking with professionals from a particular company. To learn more about your vision of a company’s values click SURVEY EMPLOYER’S VALUES!</string>
+    <string name="identify_employers_values_text">Companies differ by their corporate cultures which are usually conveyed by corporate values statements. Yet, the real sense of a corporate culture at a particular company may be captured through subjective personal feel. This perception we might get at informational/job interviews and while networking with professionals from a particular company</string>
     <string name="take_self_eval">Survey My Values</string>
     <string name="take_employer_eval">Survey Employer\'s Values</string>
     <string name="view_results">View Results</string>
     <string name="logo">Brought to you by Career Changeover</string>
-
 
     <string name="personal_survey_statement">As a guiding principle in my life, this value is... </string>
     <string name="employer_survey_statement">As a business guiding principle for the company, this value is... </string>

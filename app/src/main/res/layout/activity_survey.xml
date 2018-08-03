@@ -12,6 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/survey_statement_top_margin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textSize="@dimen/text_size"
         android:text="survey statement"/>
 
