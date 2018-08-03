@@ -1,9 +1,10 @@
 package seanacheng.com.schwartzsurvey;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,11 +12,21 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     MyDbHandler dbHandler;
+    SharedPreferences mPref;
+    String seeTutorialPref = "openTutorial";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPref = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean goToTutorial = mPref.getBoolean(seeTutorialPref,true);
+
+        if (goToTutorial) {
+            Intent openTutorial = new Intent(MainActivity.this,TutorialActivity.class);
+            startActivity(openTutorial);
+        }
 
         findViewById(R.id.takeSelfSurveyButton).setOnClickListener(this);
         findViewById(R.id.takeEmployerSurveyButton).setOnClickListener(this);
@@ -25,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_tabbed, menu);
+        getMenuInflater().inflate(R.menu.menu_main_activity, menu);
         return true;
     }
 
@@ -36,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.viewTutorial:
-                Intent goToTutorial = new Intent(MainActivity.this,TabbedActivity.class);
+                Intent goToTutorial = new Intent(MainActivity.this,TutorialActivity.class);
+                goToTutorial.putExtra("allow",true);
                 startActivity(goToTutorial);
                 break;
         }

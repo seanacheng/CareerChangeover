@@ -161,7 +161,7 @@ public class ResultsActivity extends AppCompatActivity {
             dataSet1.setFillColor(Color.GREEN);
             dataSet1.setDrawFilled(true);
             dataSet1.setFillAlpha(180);
-            dataSet1.setDrawHighlightCircleEnabled(true);
+//            dataSet1.setDrawHighlightCircleEnabled(true);
             list.add(dataSet1);
         }
 
@@ -172,7 +172,7 @@ public class ResultsActivity extends AppCompatActivity {
             dataSet2.setFillColor(Color.RED);
             dataSet2.setDrawFilled(true);
             dataSet2.setFillAlpha(180);
-            dataSet2.setDrawHighlightCircleEnabled(true);
+//            dataSet2.setDrawHighlightCircleEnabled(true);
             list.add(dataSet2);
         }
 

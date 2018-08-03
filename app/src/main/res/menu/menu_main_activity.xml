@@ -5,6 +5,6 @@
     <item
         android:id="@+id/viewTutorial"
         android:orderInCategory="100"
-        android:title="Go to tutorial"
+        android:title="@string/go_to_tutorial"
         app:showAsAction="never" />
 </menu>

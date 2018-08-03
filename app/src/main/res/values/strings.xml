@@ -43,8 +43,7 @@
         <item>Attainment of prestige, control over people and resources</item>
         <item>Safety, harmony and stability of the society, relationships and the self</item>
     </string-array>
-    <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="go_to_tutorial">go to tutorial</string>
+    <string name="go_to_menu">exit to menu</string>
 
 </resources>
