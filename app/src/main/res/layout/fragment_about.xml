@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/identify_employers_values"
+        android:text="@string/what"
         android:textSize="@dimen/intro_text_size"
         android:textAlignment="center"/>
 
@@ -22,7 +22,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/identify_employers_values_text"
+        android:text="@string/what_text"
         android:textSize="20sp"
         android:textAlignment="center"/>
 

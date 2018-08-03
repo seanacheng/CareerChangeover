@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Values Visualizer</string>
-    <string name="discover_your_values">Discover Your Values</string>
-    <string name="discover_your_values_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own personal values may help navigate professional development at a suitable company.</string>
-    <string name="identify_employers_values">Identify Your Employer\'s Values</string>
-    <string name="identify_employers_values_text">Companies differ by their corporate cultures which are usually conveyed by corporate values statements. Yet, the real sense of a corporate culture at a particular company may be captured through subjective personal feel. This perception we might get at informational/job interviews and while networking with professionals from a particular company</string>
+    <string name="why">Why Use The Values Visualizer?</string>
+    <string name="why_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own values and reflecting on employer’s values may help navigate career development. We built Values Visualizer to help you comprehend your personal values, discover your [current or prospective] employer’s values, and compare both results on a chart.</string>
+    <string name="what">What Is The Values Visualizer?</string>
+    <string name="what_text">We are using the Schwartz Theory of Basic Human Values. It outlines values which are believed to be universal across cultures. The provided survey is an adapted version of the Schwartz Value Survey.</string>
+    <string name="how">Instructions</string>
+    <string name="how_text">You must answer all 46 survey questions in order to view the results of that survey. You can save your progress and return to complete the survey later.</string>
+    <string name="go_to_menu">exit to menu</string>
+
+    <string name="go_to_tutorial">go to tutorial</string>
     <string name="take_self_eval">Survey My Values</string>
     <string name="take_employer_eval">Survey Employer\'s Values</string>
     <string name="view_results">View Results</string>
@@ -30,20 +35,5 @@
     <string name="both">Both</string>
     <string name="personal_only">Personal Only</string>
     <string name="employer_only">Employer Only</string>
-
-    <string-array name="dimensionMotivationalGoals">
-        <item>Restraint of actions that could upset others or violate societal norms</item>
-        <item>Respect, commitment and acceptance of the customs and ideas originating from one’s culture/religion</item>
-        <item>Preservation and enhancement of the welfare of close people</item>
-        <item>Understanding, tolerance, appreciation and protection for the welfare of all people and nature</item>
-        <item>Independent thought and action</item>
-        <item>Excitement, novelty and challenge</item>
-        <item>Gratification for oneself</item>
-        <item>Personal success through demonstration of competence according to social standards</item>
-        <item>Attainment of prestige, control over people and resources</item>
-        <item>Safety, harmony and stability of the society, relationships and the self</item>
-    </string-array>
-    <string name="go_to_tutorial">go to tutorial</string>
-    <string name="go_to_menu">exit to menu</string>
 
 </resources>

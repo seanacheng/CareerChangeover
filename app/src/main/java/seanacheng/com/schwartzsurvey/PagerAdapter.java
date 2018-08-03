@@ -25,12 +25,15 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 2:
                 fragment = new AboutFragment();
                 break;
+            case 3:
+                fragment = new InstructionsFragment();
+                break;
         }
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
