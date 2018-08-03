@@ -24,7 +24,7 @@ public class IntroTutorialActivity extends FragmentActivity {
         boolean skipTutorial = mPref.getBoolean(tutorialViewedPref,false);
         final Intent exitToMain = new Intent(IntroTutorialActivity.this,MainActivity.class);
 
-        if (skipTutorial) {
+        if (!skipTutorial) {
             startActivity(exitToMain);
         } else {
             pagerAdapter = new PagerAdapter(getSupportFragmentManager());
@@ -36,8 +36,7 @@ public class IntroTutorialActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = mPref.edit();
-//                editor.putBoolean(tutorialViewedPref, true);
-                editor.putBoolean(tutorialViewedPref, false);
+                editor.putBoolean(tutorialViewedPref, true);
                 editor.apply();
                 startActivity(exitToMain);
             }
