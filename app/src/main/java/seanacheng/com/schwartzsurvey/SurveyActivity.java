@@ -69,9 +69,19 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                     Intent disclaimerPopUp = new Intent(SurveyActivity.this,DisclaimerPopUp.class);
                     startActivity(disclaimerPopUp);
                 }
-                myDbHandler.calculateScore(valuesArray,column);
+                if (checkSurveyComplete()) {
+                    myDbHandler.calculateScore(valuesArray,column);
+                }
 
                 break;
         }
+    }
+
+    private boolean checkSurveyComplete() {
+        for (Value value: valuesArray) {
+            int rank = value.getRank(column);
+            if (rank == -1) return false;
+        }
+        return true;
     }
 }

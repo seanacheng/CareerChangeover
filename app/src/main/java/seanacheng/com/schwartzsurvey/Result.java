@@ -34,18 +34,18 @@ public class Result {
 
     public double getScore(String column) {
         double result;
-        if (column.startsWith("personal")) {
+        if (column.toLowerCase().startsWith("personal")) {
             result = personalScore;
-        } else if (column.startsWith("employer")) {
+        } else if (column.toLowerCase().startsWith("employer")) {
             result = employerScore;
         } else result = -1;
         return result;
     }
 
     public void setScore(double result, String column) {
-        if (column.startsWith("personal")) {
+        if (column.toLowerCase().startsWith("personal")) {
             this.personalScore = result;
-        } else if (column.startsWith("employer")) {
+        } else if (column.toLowerCase().startsWith("employer")) {
             this.employerScore = result;
         }
     }
