@@ -6,9 +6,9 @@
         android:id="@+id/idTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/notImportant"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/notImportant"
+        android:layout_marginLeft="@dimen/survey_horizontal_margin"
+        android:layout_marginStart="@dimen/survey_horizontal_margin"
         android:layout_marginTop="@dimen/survey_vertical_margin"
         android:text="id" />
 
@@ -19,6 +19,8 @@
         android:layout_alignTop="@+id/idTextView"
         android:layout_toEndOf="@+id/idTextView"
         android:layout_toRightOf="@id/idTextView"
+        android:layout_marginRight="@dimen/survey_horizontal_margin"
+        android:layout_marginEnd="@dimen/survey_horizontal_margin"
         android:text="value" />
 
     <RadioGroup
@@ -35,8 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio1"
@@ -44,8 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio2"
@@ -53,8 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio3"
@@ -62,8 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio4"
@@ -71,8 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio5"
@@ -80,8 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size" />
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/radio6"
@@ -89,8 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false"
-            android:textSize="@dimen/text_size"/>
+            android:checked="false" />
 
     </RadioGroup>
 
@@ -101,7 +96,7 @@
         android:layout_alignLeft="@id/rankRadioGroup"
         android:layout_alignStart="@+id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
-        android:layout_marginBottom="@dimen/survey_vertical_margin"
+        android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
         android:gravity="center"
         android:text="@string/not_important"
         android:textSize="@dimen/imp_lbl_txt_size" />
@@ -112,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rankRadioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/survey_vertical_margin"
+        android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
         android:text="@string/important"
         android:textSize="@dimen/imp_lbl_txt_size" />
 
@@ -123,7 +118,7 @@
         android:layout_alignEnd="@+id/rankRadioGroup"
         android:layout_alignRight="@id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
-        android:layout_marginBottom="@dimen/survey_vertical_margin"
+        android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
         android:gravity="center"
         android:text="@string/very_important"
         android:textSize="@dimen/imp_lbl_txt_size"/>

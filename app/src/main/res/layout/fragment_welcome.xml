@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
-        android:textSize="30sp"
+        android:textSize="@dimen/welcome_text_size"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/welcome_text_top_margin"/>
 
     <TextView
-        android:id="@+id/swipeTextView"
+        android:id="@+id/swipeTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -25,6 +25,6 @@
         android:layout_marginRight="@dimen/swipe_text_margin"
         android:layout_marginEnd="@dimen/swipe_text_margin"
         android:text="@string/swipe_to_continue"
-        android:textSize="20sp"/>
+        android:textSize="@dimen/swipe_text_size"/>
 
 </FrameLayout>

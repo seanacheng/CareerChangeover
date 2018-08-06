@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,7 +15,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     ItemAdapter itemAdapter;
     SharedPreferences mPref;
     String disclaimerAcceptedPref = "disclaimerAccepted";
-    TextView footnote;
+    TextView surveyStatement;
     ListView listView;
     Value[] valuesArray;
     String column;
@@ -27,7 +26,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_survey);
         column = getIntent().getStringExtra("column_name");
 
-        setFootnoteText();
+        setSurveyStatement();
 
         myDbHandler = new MyDbHandler(this);
         valuesArray = myDbHandler.getValuesArray();
@@ -40,14 +39,16 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    public void setFootnoteText() {
+    public void setSurveyStatement() {
 
-        footnote = findViewById(R.id.surveyStatementTextView);
+        surveyStatement = findViewById(R.id.surveyStatementTextView);
 
         if (column.startsWith("personal")) {
-            footnote.setText(getResources().getString(R.string.personal_survey_statement));
+            surveyStatement.setText(getResources().getString(R.string.personal_survey_statement));
+            surveyStatement.setTextSize(getResources().getDimension(R.dimen.survey_statement_text_size));
         } else if (column.startsWith("employer")) {
-            footnote.setText(getResources().getString(R.string.employer_survey_statement));
+            surveyStatement.setText(getResources().getString(R.string.employer_survey_statement));
+            surveyStatement.setTextSize(getResources().getDimension(R.dimen.survey_statement_text_size));
         }
     }
 

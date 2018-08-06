@@ -8,24 +8,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/tutorial_title_top_margin"
         android:layout_gravity="center_horizontal"
         android:text="@string/how"
-        android:textSize="@dimen/intro_text_size"
+        android:textSize="@dimen/tutorial_title_text_size"
         android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/tutorial_text_top_margin"
+        android:layout_marginLeft="@dimen/tutorial_text_horizontal_margin"
+        android:layout_marginRight="@dimen/tutorial_text_horizontal_margin"
         android:layout_gravity="center_horizontal"
         android:text="@string/how_text"
-        android:textSize="20sp" />
+        android:textSize="@dimen/tutorial_text_size" />
 
     <TextView
-        android:id="@+id/swipeTextView3"
+        android:id="@+id/swipeTextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|bottom"
@@ -33,6 +33,6 @@
         android:layout_marginStart="@dimen/swipe_text_margin"
         android:layout_marginBottom="@dimen/swipe_text_margin"
         android:text="@string/swipe_to_previous"
-        android:textSize="20sp"/>
+        android:textSize="@dimen/swipe_text_size"/>
 
 </FrameLayout>

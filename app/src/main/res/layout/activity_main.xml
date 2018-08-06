@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".MainActivity">
 
     <Button
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/self_survey_button"
+        android:layout_marginBottom="@dimen/self_survey_button_bottom_margin"
         android:text="@string/take_self_eval" />
 
     <Button
@@ -19,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/employer_survey_button"
+        android:layout_marginBottom="@dimen/employer_survey_button_bottom_margin"
         android:text="@string/take_employer_eval" />
 
     <Button
@@ -27,16 +26,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/results_button"
+        android:layout_marginBottom="@dimen/results_button_bottom_margin"
         android:text="@string/view_results" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="130dp"
+        android:id="@+id/broughtToYouByTextView"
+        android:layout_width="@dimen/brought_to_you_by_text_width"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/brought_to_you_by_bottom_margin"
         android:text="@string/logo" />
 
 </RelativeLayout>

@@ -1,4 +1,5 @@
 <resources>
+    tutorial page
     <string name="app_name">Values Visualizer</string>
     <string name="welcome">WELCOME TO THE\n\nVALUES VISUALIZER</string>
     <string name="swipe_to_continue">Swipe to Continue \u003e\u003e\u003e</string>
@@ -12,12 +13,14 @@
     <string name="how_text">1. You can save your progress and return to complete the survey later.\n\n2. You must answer all 46 survey questions in order to view the results.</string>
     <string name="go_to_menu">exit to menu</string>
 
+    menu page
     <string name="go_to_tutorial">go to tutorial</string>
     <string name="take_self_eval">Survey My Values</string>
     <string name="take_employer_eval">Survey Employer\'s Values</string>
     <string name="view_results">View Results</string>
     <string name="logo">Brought to you by Career Changeover</string>
 
+    survey page
     <string name="personal_survey_statement">As a guiding principle in my life, this value is... </string>
     <string name="employer_survey_statement">As a business guiding principle for the company, this value is... </string>
     <string name="values">Value Statement</string>
@@ -27,11 +30,13 @@
     <string name="very_important">Very Important</string>
     <string name="save">Save</string>
 
+    disclaimer page
     <string name="disclaimer">DISCLAIMER:</string>
     <string name="disclaimer_text">The information provided in this application is for educational and entertainment purposes only. The survey results are not intended to diagnose any disease or conditions, and may not be used by health care professionals to recommend a treatment. </string>
     <string name="accept">I Accept</string>
     <string name="disclaimer_check_box">Do Not Show Again</string>
 
+    results page
     <string name="results">Results</string>
     <string name="table_header_dimension">Dimension</string>
     <string name="table_header_personal_score">Personal Score</string>
