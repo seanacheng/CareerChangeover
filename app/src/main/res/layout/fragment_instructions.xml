@@ -22,7 +22,17 @@
         android:layout_marginRight="20dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/how_text"
-        android:textSize="20sp"
-        android:textAlignment="center"/>
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/swipeTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginLeft="@dimen/swipe_text_margin"
+        android:layout_marginStart="@dimen/swipe_text_margin"
+        android:layout_marginBottom="@dimen/swipe_text_margin"
+        android:text="@string/swipe_to_previous"
+        android:textSize="20sp"/>
 
 </FrameLayout>

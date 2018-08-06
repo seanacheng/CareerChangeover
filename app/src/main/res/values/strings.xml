@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Values Visualizer</string>
+    <string name="welcome">WELCOME TO THE\n\nVALUES VISUALIZER</string>
+    <string name="swipe_to_continue">Swipe to Continue \u003e\u003e\u003e</string>
+    <string name="swipe"> \u003c\u003c\u003c Swipe \u003e\u003e\u003e </string>
+    <string name="swipe_to_previous">\u003c\u003c\u003c Swipe to Previous</string>
     <string name="why">Why Use The Values Visualizer?</string>
-    <string name="why_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. Understanding our own values and reflecting on employer’s values may help navigate career development. We built Values Visualizer to help you comprehend your personal values, discover your [current or prospective] employer’s values, and compare both results on a chart.</string>
+    <string name="why_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. At Career Changeover, we believe that understanding our own values and reflecting on employer’s values may help navigate career development. Therefore, we created the Values Visualizer that will help you visualize your personal values, understand your current or prospective employers’ values, and compare the results.</string>
     <string name="what">What Is The Values Visualizer?</string>
-    <string name="what_text">We are using the Schwartz Theory of Basic Human Values. It outlines values which are believed to be universal across cultures. The provided survey is an adapted version of the Schwartz Value Survey.</string>
+    <string name="what_text">The Schwartz Theory of Basic Human Values developed by Shalom Schwartz identifies 10 fundamental motivational values that are universally recognized. Schwartz developed a value survey following this theory that measures the degree to which each value motivates a person by breaking down each value into lower-level beliefs.  The results are then graphed on a radar chart to portray the dynamic relationships among the 10 distinct values. The survey provided is an adapted version of the Schwartz Value Survey.</string>
     <string name="how">Instructions</string>
-    <string name="how_text">You must answer all 46 survey questions in order to view the results of that survey. You can save your progress and return to complete the survey later.</string>
+    <string name="how_text">1. You can save your progress and return to complete the survey later.\n\n2. You must answer all 46 survey questions in order to view the results.</string>
     <string name="go_to_menu">exit to menu</string>
 
     <string name="go_to_tutorial">go to tutorial</string>

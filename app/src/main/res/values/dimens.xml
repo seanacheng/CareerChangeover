@@ -25,5 +25,7 @@
     <dimen name="header_row_vertical_margin">5dp</dimen>
     <dimen name="column_spacing_margin">20dp</dimen>
 
-    <dimen name="exit_button_bottom_margin">40dp</dimen>
+    <dimen name="welcome_text_top_margin">100dp</dimen>
+    <dimen name="exit_button_bottom_margin">60dp</dimen>
+    <dimen name="swipe_text_margin">20dp</dimen>
 </resources>
