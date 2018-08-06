@@ -25,9 +25,9 @@
     <string name="employer_survey_statement">As a business guiding principle for the company, this value is... </string>
     <string name="values">Value Statement</string>
     <string name="explanation">Explanation</string>
-    <string name="not_important">Not Important</string>
+    <string name="not_important">Not\nImportant</string>
     <string name="important">Important</string>
-    <string name="very_important">Very Important</string>
+    <string name="very_important">Very\nImportant</string>
     <string name="save">Save</string>
 
     disclaimer page

@@ -15,8 +15,8 @@
         android:layout_marginLeft="@dimen/survey_statement_horizontal_margin"
         android:layout_marginRight="@dimen/survey_statement_horizontal_margin"
         android:layout_marginBottom="@dimen/survey_statement_bottom_margin"
-        android:textSize="@dimen/survey_statement_text_size"
-        android:text="survey statement"/>
+        android:text="survey statement"
+        android:textSize="@dimen/survey_statement_text_size" />
 
     <ListView
         android:id="@+id/surveyListView"

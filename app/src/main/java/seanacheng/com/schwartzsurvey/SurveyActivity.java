@@ -45,10 +45,8 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
 
         if (column.startsWith("personal")) {
             surveyStatement.setText(getResources().getString(R.string.personal_survey_statement));
-            surveyStatement.setTextSize(getResources().getDimension(R.dimen.survey_statement_text_size));
         } else if (column.startsWith("employer")) {
             surveyStatement.setText(getResources().getString(R.string.employer_survey_statement));
-            surveyStatement.setTextSize(getResources().getDimension(R.dimen.survey_statement_text_size));
         }
     }
 

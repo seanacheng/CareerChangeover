@@ -10,7 +10,8 @@
         android:layout_marginLeft="@dimen/survey_horizontal_margin"
         android:layout_marginStart="@dimen/survey_horizontal_margin"
         android:layout_marginTop="@dimen/survey_vertical_margin"
-        android:text="id" />
+        android:text="id"
+        android:textSize="@dimen/survey_text_size"/>
 
     <TextView
         android:id="@+id/valueTextView"
@@ -21,7 +22,8 @@
         android:layout_toRightOf="@id/idTextView"
         android:layout_marginRight="@dimen/survey_horizontal_margin"
         android:layout_marginEnd="@dimen/survey_horizontal_margin"
-        android:text="value" />
+        android:text="value"
+        android:textSize="@dimen/survey_text_size" />
 
     <RadioGroup
         android:id="@+id/rankRadioGroup"
@@ -91,15 +93,17 @@
 
     <TextView
         android:id="@+id/notImportant"
-        android:layout_width="@dimen/imp_lbl_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/rankRadioGroup"
-        android:layout_alignStart="@+id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
+        android:layout_toLeftOf="@id/important"
+        android:layout_toStartOf="@id/important"
+        android:layout_marginRight="@dimen/imp_lbl_horizontal_margin"
+        android:layout_marginEnd="@dimen/imp_lbl_horizontal_margin"
         android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
-        android:gravity="center"
         android:text="@string/not_important"
-        android:textSize="@dimen/imp_lbl_txt_size" />
+        android:textSize="@dimen/imp_lbl_txt_size"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/important"
@@ -113,14 +117,16 @@
 
     <TextView
         android:id="@+id/veryImportant"
-        android:layout_width="@dimen/imp_lbl_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/rankRadioGroup"
-        android:layout_alignRight="@id/rankRadioGroup"
         android:layout_below="@+id/rankRadioGroup"
+        android:layout_toRightOf="@id/important"
+        android:layout_toEndOf="@id/important"
+        android:layout_marginLeft="@dimen/imp_lbl_horizontal_margin"
+        android:layout_marginStart="@dimen/imp_lbl_horizontal_margin"
         android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
-        android:gravity="center"
         android:text="@string/very_important"
-        android:textSize="@dimen/imp_lbl_txt_size"/>
+        android:textSize="@dimen/imp_lbl_txt_size"
+        android:textAlignment="center"/>
 
 </RelativeLayout>

@@ -14,13 +14,14 @@
     <dimen name="survey_statement_top_margin">20dp</dimen>
     <dimen name="survey_statement_horizontal_margin">10dp</dimen>
     <dimen name="survey_statement_bottom_margin">15dp</dimen>
-    <dimen name="survey_statement_text_size">7sp</dimen>
+    <dimen name="survey_statement_text_size">18sp</dimen>
     <dimen name="list_view_top_margin">75dp</dimen>
     <dimen name="survey_horizontal_margin">10dp</dimen>
     <dimen name="survey_vertical_margin">20dp</dimen>
+    <dimen name="survey_text_size">16sp</dimen>
     <dimen name="radio_horizontal_margin">10dp</dimen>
-    <dimen name="imp_lbl_width">55dp</dimen>
-    <dimen name="imp_lbl_txt_size">12sp</dimen>
+    <dimen name="imp_lbl_horizontal_margin">95dp</dimen>
+    <dimen name="imp_lbl_txt_size">14sp</dimen>
     <dimen name="imp_lbl_bottom_margin">20dp</dimen>
     <dimen name="save_button_bottom_margin">10dp</dimen>
 
