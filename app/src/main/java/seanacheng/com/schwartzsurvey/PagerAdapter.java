@@ -14,7 +14,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-
+        // Gets fragment to show
         switch (i) {
             case 0:
                 fragment = new WelcomeFragment();

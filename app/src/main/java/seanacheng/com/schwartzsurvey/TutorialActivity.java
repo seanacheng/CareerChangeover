@@ -13,10 +13,6 @@ import android.view.View;
 
 public class TutorialActivity extends AppCompatActivity {
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-
     String openTutorialPref = "openTutorial";
     SharedPreferences mPref;
     FragmentPagerAdapter pagerAdapter;
@@ -26,9 +22,9 @@ public class TutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
 
+        // View Pager Adapter
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pager = findViewById(R.id.viewPager);
         pager.setAdapter(pagerAdapter);
@@ -36,6 +32,7 @@ public class TutorialActivity extends AppCompatActivity {
         findViewById(R.id.exitButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // sets open tutorial flag to false on click
                 SharedPreferences.Editor editor = mPref.edit();
                 editor.putBoolean(openTutorialPref, false);
                 editor.apply();

@@ -62,9 +62,11 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+        // Initializes db handler class
         myDbHandler = new MyDbHandler(this);
         resultsArray = myDbHandler.getResultsArray();
 
+        // Initializes String resources
         both = getResources().getString(R.string.both);
         personalOnly = getResources().getString(R.string.personal_only);
         employerOnly = getResources().getString(R.string.employer_only);
@@ -72,11 +74,13 @@ public class ResultsActivity extends AppCompatActivity {
         personalScore = getResources().getString(R.string.table_header_personal_score);
         employerScore = getResources().getString(R.string.table_header_employer_score);
 
+        // Displays chart and table
         chart = findViewById(R.id.radarChart);
         linearLayout = findViewById(R.id.linearLayout);
         table = findViewById(R.id.tableLayout);
         displayChartAndTable(createDataSet());
 
+        // Chart settings
         chart.setWebAlpha(100);
         chart.getDescription().setEnabled(false);
         chart.setRotationEnabled(false);
@@ -87,6 +91,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         setChartAxes(chart);
 
+        // Creates a chart legend
         legend = chart.getLegend();
         legend.setTextSize(15f);
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
@@ -97,6 +102,7 @@ public class ResultsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflates chart view menu
         getMenuInflater().inflate(R.menu.radar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -105,14 +111,17 @@ public class ResultsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.both:
+                // Shows results of both personal and employer surveys
                 resultsToView = both;
                 displayChartAndTable(createDataSet());
                 break;
             case R.id.personalOnly:
+                // Shows personal survey results only
                 resultsToView = personalOnly;
                 displayChartAndTable(createDataSet());
                 break;
             case R.id.employerOnly:
+                // Shows employer survey results only
                 resultsToView = employerOnly;
                 displayChartAndTable(createDataSet());
                 break;
@@ -121,7 +130,7 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private void setChartAxes(RadarChart chart) {
-
+        // Chart axes settings
         XAxis xAxis = chart.getXAxis();
         xAxis.setTextSize(14);
         xAxis.setXOffset(0);
@@ -149,6 +158,7 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private boolean checkResultsExist(String column) {
+        // Checks that result array is not empty
         for (Result result: resultsArray) {
             if (result.getScore(column) == -1) return false;
         }
@@ -156,9 +166,11 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private ArrayList<IRadarDataSet> createDataSet() {
+        // Returns list of type data set to display on the chart
         List<RadarEntry> personalEntryArrayList = new ArrayList<>();
         List<RadarEntry> employerEntryArrayList = new ArrayList<>();
 
+        // Reads scores from results array
         for (int i = 0; i < resultsArray.length; i++) {
             RadarEntry personalEntry = new RadarEntry((float) resultsArray[i].getPersonalScore());
             personalEntryArrayList.add(personalEntry);
@@ -169,7 +181,7 @@ public class ResultsActivity extends AppCompatActivity {
         ArrayList<IRadarDataSet> list = new ArrayList<>();
 
         if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
-
+            // Fills type data set with data and settings
             RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList, personalScore);
             dataSet1.setColor(Color.GREEN);
             dataSet1.setFillColor(Color.GREEN);
@@ -180,7 +192,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
 
         if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
-
+            // Fills type data set with data and settings
             RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
             dataSet2.setColor(Color.RED);
             dataSet2.setFillColor(Color.RED);
@@ -193,6 +205,8 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private void displayChartAndTable(ArrayList<IRadarDataSet> list) {
+        // Displays chart and table data if given
+        // Erases chart and table and shows warning if no data is available
         if (!list.isEmpty()) {
             data = new RadarData(list);
             data.setValueTextSize(8f);
@@ -216,14 +230,17 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private void fillInTableRows() {
+        // Refreshes table data
         table.removeAllViews();
         DecimalFormat decimalFormat = new DecimalFormat("#.###");
         String score;
 
+        // Sets table margins
         TableRow.LayoutParams params = new TableRow.LayoutParams();
         int columnSpacing = (int) getResources().getDimension(R.dimen.column_spacing_margin);
         params.setMargins(columnSpacing,0,0,0);
 
+        // Creates header row
         TableRow headerRow = new TableRow(this);
         TextView dimensionHeader = new TextView(this);
         headerRow.addView(dimensionHeader);
@@ -248,6 +265,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         table.addView(headerRow);
 
+        // Creates data rows
         for (int i=0;i<resultsArray.length;i++) {
             TableRow tableRow = new TableRow(this);
 
@@ -281,6 +299,7 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     private void showWarning() {
+        // Creates and displays warning text if no data is available
         warning = new TextView(this);
         warning.setGravity(Gravity.CENTER);
         String blank = "";
@@ -299,8 +318,8 @@ public class ResultsActivity extends AppCompatActivity {
 
     }
 
-    private static Map<String, Integer> getScreenResolution(Context context)
-    {
+    private static Map<String, Integer> getScreenResolution(Context context) {
+        // Returns map of width and height of screen
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();

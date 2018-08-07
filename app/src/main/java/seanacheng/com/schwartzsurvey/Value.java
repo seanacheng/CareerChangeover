@@ -8,9 +8,10 @@ public class Value {
     private int selfRank;
     private int employerRank;
 
-
+    // Constructor
     public Value() {}
 
+    // Getters
     public int getID() {
         return questionID;
     }
@@ -33,7 +34,7 @@ public class Value {
         return rank;
     }
 
-
+    // Setters
     public void setID(int ID) {
         this.questionID = ID;
     }

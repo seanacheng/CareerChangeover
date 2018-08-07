@@ -15,7 +15,7 @@ public class ItemAdapter extends BaseAdapter {
     private Value[] valuesArray;
     private String columnName;
 
-
+    // Constructor
     public ItemAdapter(Context c, Value[] array, String column) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         valuesArray = array;
@@ -40,12 +40,14 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
+        // Inflates list of values, returns views to display on screen
         View v = mInflater.inflate(R.layout.value_list_layout,null);
         TextView idTextView = v.findViewById(R.id.idTextView);
         TextView valueTextView = v.findViewById(R.id.valueTextView);
         RadioGroup radioGroup = v.findViewById(R.id.rankRadioGroup);
         int radioChecked = valuesArray[position].getRank(columnName);
 
+        // Finds which radio button was clicked
         switch (radioChecked) {
             case -1:
                 break;
@@ -68,6 +70,7 @@ public class ItemAdapter extends BaseAdapter {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int id) {
+                // Updates selected rank in an array when checked radio button changes
                 switch (id) {
                     case R.id.radio0:
                         valuesArray[position].setRank(0,columnName);
@@ -93,6 +96,7 @@ public class ItemAdapter extends BaseAdapter {
                 }
             }
         });
+        // Displays id and value to be ranked
         int id = (int) getItemId(position);
         String value = valuesArray[position].getValue();
         idTextView.setText(" "+id+". ");
@@ -101,6 +105,7 @@ public class ItemAdapter extends BaseAdapter {
         return v;
     }
 
+    // Getter for most recently updated values array
     public Value[] getValuesArray() {
         return valuesArray;
     }

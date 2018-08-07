@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 
-public class DisclaimerPopUp extends AppCompatActivity implements View.OnClickListener {
+public class DisclaimerPopUp extends AppCompatActivity {
 
     private CheckBox checkBox;
     SharedPreferences mPref;
@@ -22,13 +22,10 @@ public class DisclaimerPopUp extends AppCompatActivity implements View.OnClickLi
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
         checkBox = findViewById(R.id.disclaimerCheckBox);
 
-        findViewById(R.id.acceptButton).setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.acceptButton:
+        findViewById(R.id.acceptButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Sets accept disclaimer flag to true on click
                 if (checkBox.isChecked()) {
                     SharedPreferences.Editor editor = mPref.edit();
                     editor.putBoolean(disclaimerAcceptedPref, true);
@@ -36,8 +33,8 @@ public class DisclaimerPopUp extends AppCompatActivity implements View.OnClickLi
                 }
                 Intent accept = new Intent(DisclaimerPopUp.this,MainActivity.class);
                 startActivity(accept);
-                break;
-        }
+            }
+        });
     }
 
 }

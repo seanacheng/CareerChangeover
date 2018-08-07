@@ -39,6 +39,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
 
     private void createSQLiteTables(SQLiteDatabase SQLiteDatabase) {
+        // Creates table in database to store user selected ranks
         String createRankTable = "create table if not exists "+TABLE_RANK+"("+
                 COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_VALUE+" text not null, "+
@@ -47,6 +48,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
                 COLUMN_EMPLOYER_EVAL+" integer default -1);";
         SQLiteDatabase.execSQL(createRankTable);
 
+        // Creates table in database to store calculated results
         String createScoreTable = "create table if not exists "+TABLE_SCORE+"("+
                 COLUMN_ID+" integer primary key autoincrement, "+
                 COLUMN_DIMENSION+" text not null, "+
@@ -56,7 +58,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     private void insertValues(SQLiteDatabase db) {
-
+        // Inserts arrays of values and dimensions into tables
         String[] valuesArray = {"EQUALITY (equal opportunity for all)",
                                 "SOCIAL POWER (control over others, dominance)",
                                 "PLEASURE (gratification of desires)",
@@ -116,7 +118,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
                 "stimulation","hedonism","achievement","power","security"};
 
         ContentValues values = new ContentValues();
-
+        // fills rank table with content values
         for (int i=0;i<valuesArray.length;i++) {
             values.put(COLUMN_VALUE,valuesArray[i]);
             values.put(COLUMN_DIMENSION,valueDimensionsArray[i]);
@@ -124,7 +126,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
         }
 
         values.clear();
-
+        // fills score table with content values
         for (String dimension:dimensionsArray) {
             values.put(COLUMN_DIMENSION,dimension);
             db.insert(TABLE_SCORE,null,values);
@@ -132,6 +134,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     public Value[] getValuesArray() {
+        // Retrieves values from database into an array of Value objects
         Value[] values = new Value[46];
         String selectQuery = "select * from "+TABLE_RANK+";";
 
@@ -159,6 +162,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     public void updateRank(Value[] valuesArray, String col) {
+        // Updates database with new ranks from an array of Values objects
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
         int rank;
@@ -172,6 +176,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     public void calculateScore(Value[] valuesArray, String col) {
+        // Calculates scores using array of Value objects
         Result[] resultsArray = getResultsArray();
         for (Result result:resultsArray) {
             double rankSum = 0;
@@ -186,6 +191,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
             result.setScore(avgRank, col);
         }
 
+        // Updates database with new scores from an array of Result objects
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
 
@@ -204,6 +210,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     }
 
     public Result[] getResultsArray() {
+        // Retrieves values from database into an array of Result objects
         Result[] results = new Result[10];
         String selectQuery = "select * from "+TABLE_SCORE+";";
 

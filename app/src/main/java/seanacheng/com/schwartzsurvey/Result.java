@@ -6,30 +6,20 @@ public class Result {
     private double personalScore;
     private double employerScore;
 
+    // Constructor
     public Result() {}
 
+    // Getters
     public String getValueDimension() {
         return dimension;
-    }
-
-    public void setValueDimension(String valueDimension) {
-        this.dimension = valueDimension;
     }
 
     public double getPersonalScore() {
         return personalScore;
     }
 
-    public void setPersonalScore(double personalScore) {
-        this.personalScore = personalScore;
-    }
-
     public double getEmployerScore() {
         return employerScore;
-    }
-
-    public void setEmployerScore(double employerScore) {
-        this.employerScore = employerScore;
     }
 
     public double getScore(String column) {
@@ -40,6 +30,19 @@ public class Result {
             result = employerScore;
         } else result = -1;
         return result;
+    }
+
+    // Setters
+    public void setValueDimension(String valueDimension) {
+        this.dimension = valueDimension;
+    }
+
+    public void setPersonalScore(double personalScore) {
+        this.personalScore = personalScore;
+    }
+
+    public void setEmployerScore(double employerScore) {
+        this.employerScore = employerScore;
     }
 
     public void setScore(double result, String column) {
