@@ -22,7 +22,11 @@
         android:id="@+id/surveyListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/surveyStatementTextView"/>
+        android:layout_below="@id/surveyStatementTextView"
+        android:scrollbarStyle="outsideOverlay"
+        android:fadeScrollbars="false"
+        android:paddingBottom="60dp"
+        android:clipToPadding="false" />
 
     <Button
         android:id="@+id/saveButton"

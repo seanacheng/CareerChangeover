@@ -42,8 +42,10 @@
     <dimen name="legend_text_size">5sp</dimen>
     <dimen name="table_vertical_margin">30dp</dimen>
     <dimen name="table_left_margin">20dp</dimen>
+    <dimen name="table_horizontal_margin">10dp</dimen>
     <dimen name="header_row_vertical_margin">5dp</dimen>
-    <dimen name="column_spacing_margin">20dp</dimen>
+    <dimen name="column_spacing_margin">10dp</dimen>
+    <dimen name="row_spacing_margin">10dp</dimen>
     <dimen name="table_text_size">4sp</dimen>
     <dimen name="warning_text_size">12sp</dimen>
     <dimen name="table_header_min_height">10dp</dimen>

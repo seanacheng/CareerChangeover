@@ -45,7 +45,6 @@ public class ResultsActivity extends AppCompatActivity {
     RadarData data;
     RadarChart chart;
     Legend legend;
-
     LinearLayout linearLayout;
     TableLayout table;
     TextView warning;
@@ -82,7 +81,6 @@ public class ResultsActivity extends AppCompatActivity {
         displayChartAndTable(createDataSet());
 
         // Chart settings
-        chart.setWebAlpha(100);
         chart.getDescription().setEnabled(false);
         chart.setRotationEnabled(false);
         chart.setMinimumWidth(getScreenResolution(this).get("width"));
@@ -94,7 +92,6 @@ public class ResultsActivity extends AppCompatActivity {
 
         // Creates a chart legend
         legend = chart.getLegend();
-        legend.setTextSize(getResources().getDimension(R.dimen.legend_text_size));
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
@@ -136,7 +133,6 @@ public class ResultsActivity extends AppCompatActivity {
     private void setChartAxes(RadarChart chart) {
         // Chart axes settings
         XAxis xAxis = chart.getXAxis();
-        xAxis.setTextSize(getResources().getDimension(R.dimen.chart_text_size));
         xAxis.setXOffset(0);
         xAxis.setYOffset(0);
         xAxis.setValueFormatter(new IAxisValueFormatter() {
@@ -151,22 +147,33 @@ public class ResultsActivity extends AppCompatActivity {
                 return qualities[(int) value % qualities.length];
             }
         });
-        xAxis.setTextColor(Color.DKGRAY);
 
         YAxis yAxis = chart.getYAxis();
         yAxis.setXOffset(0);
         yAxis.setYOffset(0);
         yAxis.setAxisMinimum(0f);
         yAxis.setAxisMaximum(6f);
-        yAxis.setLabelCount(5);
-        yAxis.setTextSize(10f);
-        yAxis.setDrawLabels(true);
+//        yAxis.setLabelCount(5);
+//        yAxis.setTextSize(10f);
+        yAxis.setDrawLabels(false);
     }
 
     private boolean checkResultsExist(String column) {
         // Checks that result array is not empty
-        for (Result result: resultsArray) {
-            if (result.getScore(column) == -1) return false;
+        if (column.equals(both)) {
+            for (Result pResult: resultsArray) {
+                if (pResult.getPersonalScore() == -1) {
+                    for (Result eResult: resultsArray) {
+                        if (eResult.getEmployerScore() == -1) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        } else {
+            for (Result result: resultsArray) {
+                if (result.getScore(column) == -1) return false;
+            }
         }
         return true;
     }
@@ -186,26 +193,44 @@ public class ResultsActivity extends AppCompatActivity {
 
         ArrayList<IRadarDataSet> list = new ArrayList<>();
 
+        // Fills type data set with data and settings
+        RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
+        dataSet2.setColor(Color.RED);
+        dataSet2.setFillColor(Color.RED);
+        dataSet2.setDrawFilled(true);
+        dataSet2.setFillAlpha(180);
+        dataSet2.setDrawHighlightCircleEnabled(true);
+        dataSet2.setDrawHighlightIndicators(true);
+        dataSet2.setHighlightCircleFillColor(Color.RED);
+        dataSet2.setHighLightColor(Color.RED);
+        list.add(dataSet2);
+
+        // Fills type data set with data and settings
+        RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList, personalScore);
+        dataSet1.setColor(Color.GREEN);
+        dataSet1.setFillColor(Color.GREEN);
+        dataSet1.setDrawFilled(true);
+        dataSet1.setFillAlpha(180);
+        dataSet1.setDrawHighlightCircleEnabled(true);
+        dataSet1.setDrawHighlightIndicators(true);
+        dataSet1.setHighlightCircleFillColor(Color.GREEN);
+        dataSet1.setHighLightColor(Color.GREEN);
+        list.add(dataSet1);
+
         if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
-            // Fills type data set with data and settings
-            RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
-            dataSet2.setColor(Color.RED);
-            dataSet2.setFillColor(Color.RED);
-            dataSet2.setDrawFilled(true);
-            dataSet2.setFillAlpha(180);
-//            dataSet2.setDrawHighlightCircleEnabled(true);
-            list.add(dataSet2);
+            dataSet2.setVisible(true);
+            dataSet2.setHighlightEnabled(true);
+        } else {
+            dataSet2.setVisible(false);
+            dataSet2.setHighlightEnabled(false);
         }
 
         if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
-            // Fills type data set with data and settings
-            RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList, personalScore);
-            dataSet1.setColor(Color.GREEN);
-            dataSet1.setFillColor(Color.GREEN);
-            dataSet1.setDrawFilled(true);
-            dataSet1.setFillAlpha(180);
-//            dataSet1.setDrawHighlightCircleEnabled(true);
-            list.add(dataSet1);
+            dataSet1.setVisible(true);
+            dataSet1.setHighlightEnabled(true);
+        } else {
+            dataSet1.setVisible(false);
+            dataSet1.setHighlightEnabled(false);
         }
 
         return list;
@@ -214,9 +239,8 @@ public class ResultsActivity extends AppCompatActivity {
     private void displayChartAndTable(ArrayList<IRadarDataSet> list) {
         // Displays chart and table data if given
         // Erases chart and table and shows warning if no data is available
-        if (!list.isEmpty()) {
+        if (checkResultsExist(resultsToView)) {
             data = new RadarData(list);
-//            data.setValueTextSize(getResources().getDimension(R.dimen.chart_text_size));
             data.setDrawValues(false);
 
             chart.setData(data);
@@ -242,61 +266,59 @@ public class ResultsActivity extends AppCompatActivity {
         DecimalFormat decimalFormat = new DecimalFormat("#.###");
         String score;
 
-        // Sets table margins
+        // Table margins
         TableRow.LayoutParams params = new TableRow.LayoutParams();
         int columnSpacing = (int) getResources().getDimension(R.dimen.column_spacing_margin);
-        params.setMargins(columnSpacing,0,0,0);
+        int rowSpacing = (int) getResources().getDimension(R.dimen.row_spacing_margin);
+        params.setMargins(columnSpacing,0,columnSpacing,rowSpacing);
 
-        // Creates header row
+        // Header row
         TableRow headerRow = new TableRow(this);
         TextView dimensionHeader = new TextView(this);
+        dimensionHeader.setLayoutParams(params);
         headerRow.addView(dimensionHeader);
 
-        if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
+        if (checkResultsExist(personalScore)) {
             TextView personalScoreHeader = new TextView(this);
             personalScoreHeader.setText(personalScore);
-            personalScoreHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP,getResources().getDimension(R.dimen.table_text_size));
-            personalScoreHeader.setGravity(Gravity.CENTER);
             personalScoreHeader.setLayoutParams(params);
             headerRow.addView(personalScoreHeader);
         }
 
-        if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
+        if (checkResultsExist(employerScore)) {
             TextView employerScoreHeader = new TextView(this);
             employerScoreHeader.setText(employerScore);
-            employerScoreHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP,getResources().getDimension(R.dimen.table_text_size));
-            employerScoreHeader.setGravity(Gravity.CENTER);
             employerScoreHeader.setLayoutParams(params);
             headerRow.addView(employerScoreHeader);
         }
 
         table.addView(headerRow);
 
-        // Creates data rows
+        // Data rows
         for (int i=0;i<resultsArray.length;i++) {
             TableRow tableRow = new TableRow(this);
 
             TextView dimension = new TextView(this);
             dimension.setText(resultsArray[i].getValueDimension());
-            dimension.setTextSize(TypedValue.COMPLEX_UNIT_SP,getResources().getDimension(R.dimen.table_text_size));
             dimension.setMinHeight((int) getResources().getDimension(R.dimen.table_header_min_height));
+            dimension.setPadding(10,0,0,0);
             tableRow.addView(dimension);
 
-            if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
+            if (checkResultsExist(personalScore)) {
                 TextView personalScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getPersonalScore());
                 personalScore.setText(score);
-                personalScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,getResources().getDimension(R.dimen.table_text_size));
                 personalScore.setGravity(Gravity.RIGHT);
+                personalScore.setPadding(0,0,20,0);
                 tableRow.addView(personalScore);
             }
 
-            if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
+            if (checkResultsExist(employerScore)) {
                 TextView employerScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getEmployerScore());
                 employerScore.setText(score);
-                employerScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,getResources().getDimension(R.dimen.table_text_size));
                 employerScore.setGravity(Gravity.RIGHT);
+                employerScore.setPadding(0,0,20,0);
                 tableRow.addView(employerScore);
             }
 
@@ -319,7 +341,7 @@ public class ResultsActivity extends AppCompatActivity {
         else if (resultsToView.equals(employerOnly)) {
             blank = "the employer";
         }
-        warning.setText("Warning:\n No results found. Please complete "+blank+" survey(s) to view the results.");
+        warning.setText(getString(R.string.warning,blank));
         warning.setTextSize(getResources().getDimension(R.dimen.warning_text_size));
         linearLayout.addView(warning);
 

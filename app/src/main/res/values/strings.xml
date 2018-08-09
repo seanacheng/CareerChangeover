@@ -41,8 +41,11 @@
     <string name="table_header_dimension">Dimension</string>
     <string name="table_header_personal_score">Personal Score</string>
     <string name="table_header_employer_score">Employer Score</string>
+    <string name="concat_table_header_personal_score">Personal\nScore</string>
+    <string name="concat_table_header_employer_score">Employer\nScore</string>
     <string name="both">Both</string>
     <string name="personal_only">Personal Only</string>
     <string name="employer_only">Employer Only</string>
+    <string name="warning">Warning:\n No results found. Please complete %1$s survey(s) to view the results.</string>
 
 </resources>
