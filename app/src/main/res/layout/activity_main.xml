@@ -31,11 +31,12 @@
 
     <TextView
         android:id="@+id/broughtToYouByTextView"
-        android:layout_width="@dimen/brought_to_you_by_text_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/brought_to_you_by_bottom_margin"
-        android:text="@string/logo" />
+        android:text="@string/logo"
+        android:textSize="@dimen/brought_to_you_by_text_size"/>
 
 </RelativeLayout>

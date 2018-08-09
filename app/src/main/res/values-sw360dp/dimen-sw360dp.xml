@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    menu page
+    <dimen name="discover_your_values_margin_top">20dp</dimen>
+    <dimen name="identify_employers_values_margin_top">180dp</dimen>
+    <dimen name="intro_text_size">20sp</dimen>
+    <dimen name="self_survey_button_bottom_margin">160dp</dimen>
+    <dimen name="employer_survey_button_bottom_margin">110dp</dimen>
+    <dimen name="results_button_bottom_margin">60dp</dimen>
+    <dimen name="brought_to_you_by_text_width">130dp</dimen>
+    <dimen name="brought_to_you_by_bottom_margin">15dp</dimen>
+    <dimen name="brought_to_you_by_text_size">12sp</dimen>
+
+    survey page
+    <dimen name="survey_statement_top_margin">18dp</dimen>
+    <dimen name="survey_statement_horizontal_margin">10dp</dimen>
+    <dimen name="survey_statement_bottom_margin">12dp</dimen>
+    <dimen name="survey_statement_text_size">14sp</dimen>
+    <dimen name="list_view_top_margin">60dp</dimen>
+    <dimen name="survey_horizontal_margin">10dp</dimen>
+    <dimen name="survey_vertical_margin">15dp</dimen>
+    <dimen name="survey_text_size">14sp</dimen>
+    <dimen name="radio_horizontal_margin">6dp</dimen>
+    <dimen name="imp_lbl_horizontal_margin">85dp</dimen>
+    <dimen name="imp_lbl_txt_size">12sp</dimen>
+    <dimen name="imp_lbl_bottom_margin">20dp</dimen>
+    <dimen name="save_button_bottom_margin">10dp</dimen>
+
+    disclaimer page
+    <dimen name="disclaimer_top_margin">60dp</dimen>
+    <dimen name="disclaimer_text_horizontal_margin">20dp</dimen>
+    <dimen name="disclaimer_text_top_margin">20dp</dimen>
+    <dimen name="disclaimer_text_size">15sp</dimen>
+    <dimen name="accept_btn_bottom_margin">20dp</dimen>
+    <dimen name="check_box_bottom_margin">40dp</dimen>
+
+    results page
+    <dimen name="results_title_top_margin">20dp</dimen>
+    <dimen name="results_title_text_size">24sp</dimen>
+    <dimen name="chart_text_size">5sp</dimen>
+    <dimen name="legend_text_size">5sp</dimen>
+    <dimen name="table_vertical_margin">30dp</dimen>
+    <dimen name="table_left_margin">20dp</dimen>
+    <dimen name="header_row_vertical_margin">5dp</dimen>
+    <dimen name="column_spacing_margin">20dp</dimen>
+    <dimen name="table_text_size">4sp</dimen>
+    <dimen name="warning_text_size">12sp</dimen>
+    <dimen name="table_header_min_height">10dp</dimen>
+
+    tutorial pages
+    <dimen name="welcome_text_top_margin">80dp</dimen>
+    <dimen name="welcome_text_size">25sp</dimen>
+    <dimen name="tutorial_title_top_margin">30dp</dimen>
+    <dimen name="tutorial_title_text_size">20sp</dimen>
+    <dimen name="tutorial_text_top_margin">80dp</dimen>
+    <dimen name="tutorial_text_horizontal_margin">20dp</dimen>
+    <dimen name="tutorial_text_size">16sp</dimen>
+    <dimen name="exit_button_bottom_margin">50dp</dimen>
+    <dimen name="swipe_text_margin">20dp</dimen>
+    <dimen name="swipe_text_size">16sp</dimen>
+
+</resources>
