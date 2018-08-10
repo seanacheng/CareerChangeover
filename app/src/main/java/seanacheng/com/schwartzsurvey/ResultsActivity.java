@@ -3,6 +3,7 @@ package seanacheng.com.schwartzsurvey;
 import android.content.Context;
 import android.graphics.Color;
 import android.print.PrintAttributes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
@@ -193,44 +194,32 @@ public class ResultsActivity extends AppCompatActivity {
 
         ArrayList<IRadarDataSet> list = new ArrayList<>();
 
-        // Fills type data set with data and settings
+        // Fills employer data set with data and settings
         RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
-        dataSet2.setColor(Color.RED);
-        dataSet2.setFillColor(Color.RED);
-        dataSet2.setDrawFilled(true);
-        dataSet2.setFillAlpha(180);
-        dataSet2.setDrawHighlightCircleEnabled(true);
-        dataSet2.setDrawHighlightIndicators(true);
-        dataSet2.setHighlightCircleFillColor(Color.RED);
-        dataSet2.setHighLightColor(Color.RED);
+        int navy = ContextCompat.getColor(this,R.color.navy);
+        dataSet2.setColor(navy);
+        dataSet2.setLineWidth(2);
+        dataSet2.setHighlightEnabled(false);
         list.add(dataSet2);
 
-        // Fills type data set with data and settings
+        // Fills personal data set with data and settings
         RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList, personalScore);
-        dataSet1.setColor(Color.GREEN);
-        dataSet1.setFillColor(Color.GREEN);
-        dataSet1.setDrawFilled(true);
-        dataSet1.setFillAlpha(180);
-        dataSet1.setDrawHighlightCircleEnabled(true);
-        dataSet1.setDrawHighlightIndicators(true);
-        dataSet1.setHighlightCircleFillColor(Color.GREEN);
-        dataSet1.setHighLightColor(Color.GREEN);
+        int turquoise = ContextCompat.getColor(this,R.color.turquoise);
+        dataSet1.setColor(turquoise);
+        dataSet1.setLineWidth(2);
+        dataSet1.setHighlightEnabled(false);
         list.add(dataSet1);
 
         if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
             dataSet2.setVisible(true);
-            dataSet2.setHighlightEnabled(true);
         } else {
             dataSet2.setVisible(false);
-            dataSet2.setHighlightEnabled(false);
         }
 
         if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
             dataSet1.setVisible(true);
-            dataSet1.setHighlightEnabled(true);
         } else {
             dataSet1.setVisible(false);
-            dataSet1.setHighlightEnabled(false);
         }
 
         return list;
@@ -281,6 +270,7 @@ public class ResultsActivity extends AppCompatActivity {
         if (checkResultsExist(personalScore)) {
             TextView personalScoreHeader = new TextView(this);
             personalScoreHeader.setText(personalScore);
+            personalScoreHeader.setTextColor(getResources().getColor(R.color.darkgray));
             personalScoreHeader.setLayoutParams(params);
             headerRow.addView(personalScoreHeader);
         }
@@ -288,6 +278,7 @@ public class ResultsActivity extends AppCompatActivity {
         if (checkResultsExist(employerScore)) {
             TextView employerScoreHeader = new TextView(this);
             employerScoreHeader.setText(employerScore);
+            employerScoreHeader.setTextColor(getResources().getColor(R.color.darkgray));
             employerScoreHeader.setLayoutParams(params);
             headerRow.addView(employerScoreHeader);
         }
@@ -300,6 +291,7 @@ public class ResultsActivity extends AppCompatActivity {
 
             TextView dimension = new TextView(this);
             dimension.setText(resultsArray[i].getValueDimension());
+            dimension.setTextColor(getResources().getColor(R.color.darkgray));
             dimension.setMinHeight((int) getResources().getDimension(R.dimen.table_header_min_height));
             dimension.setPadding(10,0,0,0);
             tableRow.addView(dimension);
@@ -308,6 +300,7 @@ public class ResultsActivity extends AppCompatActivity {
                 TextView personalScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getPersonalScore());
                 personalScore.setText(score);
+                personalScore.setTextColor(getResources().getColor(R.color.darkgray));
                 personalScore.setGravity(Gravity.RIGHT);
                 personalScore.setPadding(0,0,20,0);
                 tableRow.addView(personalScore);
@@ -317,6 +310,7 @@ public class ResultsActivity extends AppCompatActivity {
                 TextView employerScore = new TextView(this);
                 score = decimalFormat.format(resultsArray[i].getEmployerScore());
                 employerScore.setText(score);
+                employerScore.setTextColor(getResources().getColor(R.color.darkgray));
                 employerScore.setGravity(Gravity.RIGHT);
                 employerScore.setPadding(0,0,20,0);
                 tableRow.addView(employerScore);

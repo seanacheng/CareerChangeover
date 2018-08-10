@@ -2,13 +2,10 @@
 <resources>
 
     menu page
-    <dimen name="discover_your_values_margin_top">20dp</dimen>
-    <dimen name="identify_employers_values_margin_top">180dp</dimen>
     <dimen name="intro_text_size">20sp</dimen>
     <dimen name="self_survey_button_bottom_margin">160dp</dimen>
     <dimen name="employer_survey_button_bottom_margin">110dp</dimen>
     <dimen name="results_button_bottom_margin">60dp</dimen>
-    <dimen name="brought_to_you_by_text_width">130dp</dimen>
     <dimen name="brought_to_you_by_bottom_margin">15dp</dimen>
     <dimen name="brought_to_you_by_text_size">12sp</dimen>
 
@@ -17,7 +14,6 @@
     <dimen name="survey_statement_horizontal_margin">8dp</dimen>
     <dimen name="survey_statement_bottom_margin">10dp</dimen>
     <dimen name="survey_statement_text_size">14sp</dimen>
-    <dimen name="list_view_top_margin">60dp</dimen>
     <dimen name="survey_horizontal_margin">10dp</dimen>
     <dimen name="survey_vertical_margin">15dp</dimen>
     <dimen name="survey_text_size">12sp</dimen>
@@ -38,14 +34,10 @@
     results page
     <dimen name="results_title_top_margin">20dp</dimen>
     <dimen name="results_title_text_size">24sp</dimen>
-    <dimen name="chart_text_size">9sp</dimen>
-    <dimen name="legend_text_size">9sp</dimen>
     <dimen name="table_vertical_margin">30dp</dimen>
-    <dimen name="table_left_margin">20dp</dimen>
     <dimen name="table_horizontal_margin">5dp</dimen>
     <dimen name="column_spacing_margin">10dp</dimen>
     <dimen name="row_spacing_margin">10dp</dimen>
-    <dimen name="table_text_size">7sp</dimen>
     <dimen name="warning_text_size">14sp</dimen>
     <dimen name="table_header_min_height">10dp</dimen>
 

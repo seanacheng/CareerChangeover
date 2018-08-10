@@ -23,7 +23,8 @@
                 android:layout_marginTop="@dimen/results_title_top_margin"
                 android:layout_gravity="center"
                 android:textSize="@dimen/results_title_text_size"
-                android:text="@string/results" />
+                android:text="@string/results"
+                android:textColor="@color/darkTurquoise"/>
 
             <com.github.mikephil.charting.charts.RadarChart
                 android:id="@+id/radarChart"

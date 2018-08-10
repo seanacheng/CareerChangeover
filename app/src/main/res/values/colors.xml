@@ -3,7 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="turquoise">#00c4cc</color>
-    <color name="navy">#373782</color>
+    <color name="turquoise">#00C4CC</color>
+    <color name="darkTurquoise">#00BDBF</color>
+    <color name="turquoiseCompliment">#FF3B33</color>
+    <color name="navy">#393585</color>
+    <color name="darkNavy">#2C2790</color>
+    <color name="darkerNavy">#1B157F</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darkgray">#444444</color>
 
 </resources>

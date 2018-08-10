@@ -13,7 +13,8 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/what"
         android:textSize="@dimen/tutorial_title_text_size"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/darkTurquoise" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +25,8 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/what_text"
         android:textSize="@dimen/tutorial_text_size"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textColor="@color/darkgray" />
 
     <TextView
         android:id="@+id/swipeTextView3"
@@ -33,6 +35,7 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="@dimen/swipe_text_margin"
         android:text="@string/swipe"
-        android:textSize="@dimen/swipe_text_size" />
+        android:textSize="@dimen/swipe_text_size"
+        android:textColor="@color/navy" />
 
 </FrameLayout>

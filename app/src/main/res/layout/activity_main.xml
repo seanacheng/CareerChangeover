@@ -37,6 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/brought_to_you_by_bottom_margin"
         android:text="@string/logo"
-        android:textSize="@dimen/brought_to_you_by_text_size"/>
+        android:textSize="@dimen/brought_to_you_by_text_size"
+        android:textColor="@color/navy"/>
 
 </RelativeLayout>

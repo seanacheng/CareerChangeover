@@ -23,8 +23,6 @@
     survey page
     <string name="personal_survey_statement">As a guiding principle in my life, this value is... </string>
     <string name="employer_survey_statement">As a business guiding principle for the company, this value is... </string>
-    <string name="values">Value Statement</string>
-    <string name="explanation">Explanation</string>
     <string name="not_important">Not\nImportant</string>
     <string name="important">Important</string>
     <string name="very_important">Very\nImportant</string>
@@ -38,11 +36,8 @@
 
     results page
     <string name="results">Results</string>
-    <string name="table_header_dimension">Dimension</string>
     <string name="table_header_personal_score">Personal Score</string>
     <string name="table_header_employer_score">Employer Score</string>
-    <string name="concat_table_header_personal_score">Personal\nScore</string>
-    <string name="concat_table_header_employer_score">Employer\nScore</string>
     <string name="both">Both</string>
     <string name="personal_only">Personal Only</string>
     <string name="employer_only">Employer Only</string>

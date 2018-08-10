@@ -9,22 +9,24 @@
         android:id="@+id/disclaimerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/disclaimer_top_margin"
         android:text="@string/disclaimer"
         android:textStyle="bold"
         android:textSize="@dimen/intro_text_size"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/disclaimer_top_margin" />
+        android:textColor="@color/darkTurquoise" />
 
     <TextView
         android:id="@+id/disclaimerTxtTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/disclaimer_text"
-        android:textSize="@dimen/disclaimer_text_size"
         android:layout_below="@id/disclaimerTextView"
         android:layout_marginTop="@dimen/disclaimer_text_top_margin"
         android:layout_marginLeft="@dimen/disclaimer_text_horizontal_margin"
-        android:layout_marginRight="@dimen/disclaimer_text_horizontal_margin"/>
+        android:layout_marginRight="@dimen/disclaimer_text_horizontal_margin"
+        android:text="@string/disclaimer_text"
+        android:textSize="@dimen/disclaimer_text_size"
+        android:textColor="@color/darkgray" />
 
     <Button
         android:id="@+id/acceptButton"
@@ -42,6 +44,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/check_box_bottom_margin"
-        android:text="@string/disclaimer_check_box" />
+        android:text="@string/disclaimer_check_box"
+        android:textColor="@color/navy"/>
 
 </RelativeLayout>
