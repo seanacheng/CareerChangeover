@@ -17,7 +17,9 @@
         android:layout_marginBottom="@dimen/survey_statement_bottom_margin"
         android:text="survey statement"
         android:textSize="@dimen/survey_statement_text_size"
-        android:textColor="@color/darkgray"/>
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="@color/darkTurquoise"/>
 
     <ListView
         android:id="@+id/surveyListView"

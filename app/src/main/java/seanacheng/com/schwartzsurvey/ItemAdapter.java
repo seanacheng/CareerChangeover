@@ -1,6 +1,9 @@
 package seanacheng.com.schwartzsurvey;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +44,7 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         // Inflates list of values, returns views to display on screen
-        View v = mInflater.inflate(R.layout.value_list_layout,null);
+        final View v = mInflater.inflate(R.layout.value_list_layout,null);
         TextView idTextView = v.findViewById(R.id.idTextView);
         TextView valueTextView = v.findViewById(R.id.valueTextView);
         RadioGroup radioGroup = v.findViewById(R.id.rankRadioGroup);

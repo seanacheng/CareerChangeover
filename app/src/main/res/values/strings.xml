@@ -1,15 +1,16 @@
 <resources>
     tutorial page
     <string name="app_name">Values Visualizer</string>
-    <string name="welcome">WELCOME TO THE\n\nVALUES VISUALIZER</string>
+    <string name="splash_description">Splash Image</string>
+    <string name="welcome">welcome\nto\nthe values visualizer</string>
     <string name="swipe_to_continue">Swipe to Continue \u003e\u003e\u003e</string>
     <string name="swipe"> \u003c\u003c\u003c Swipe \u003e\u003e\u003e </string>
     <string name="swipe_to_previous">\u003c\u003c\u003c Swipe to Previous</string>
-    <string name="why">Why Use The Values Visualizer?</string>
+    <string name="why">why use the values visualizer?</string>
     <string name="why_text">Values can explain our behavior and attitudes. One of the reasons why we may be satisfied with one employer but feel uncomfortable with another employer could be hidden within our values. At Career Changeover, we believe that understanding our own values and reflecting on employer’s values may help navigate career development. Therefore, we created the Values Visualizer that will help you visualize your personal values, understand your current or prospective employers’ values, and compare the results.</string>
-    <string name="what">What Is The Values Visualizer?</string>
+    <string name="what">what is the values visualizer?</string>
     <string name="what_text">The Schwartz Theory of Basic Human Values developed by Shalom Schwartz identifies 10 fundamental motivational values that are universally recognized. Schwartz developed a value survey following this theory that measures the degree to which each value motivates a person by breaking down each value into lower-level beliefs.  The results are then graphed on a radar chart to portray the dynamic relationships among the 10 distinct values. The survey provided is an adapted version of the Schwartz Value Survey.</string>
-    <string name="how">Instructions</string>
+    <string name="how">instructions</string>
     <string name="how_text">1. You can save your progress and return to complete the survey later.\n\n2. You must answer all 46 survey questions in order to view the results.</string>
     <string name="go_to_menu">exit to menu</string>
 
@@ -35,12 +36,24 @@
     <string name="disclaimer_check_box">Do Not Show Again</string>
 
     results page
-    <string name="results">Results</string>
+    <string name="results">RESULTS</string>
     <string name="table_header_personal_score">Personal Score</string>
     <string name="table_header_employer_score">Employer Score</string>
     <string name="both">Both</string>
     <string name="personal_only">Personal Only</string>
     <string name="employer_only">Employer Only</string>
-    <string name="warning">Warning:\n No results found. Please complete %1$s survey(s) to view the results.</string>
+    <string name="warning">WARNING:\n No results found. Please complete %1$s survey to view results.</string>
+    <string-array name="value_groupings">
+        <item>Conformity (obedience, honoring parents and elders, self-discipline, politeness)</item>
+        <item>Tradition (respect for tradition, humbleness, accepting one\'s portion in life, devotion, modesty)</item>
+        <item>Benevolence (helpfulness, honesty, forgiveness, loyalty, responsibility)</item>
+        <item>Universalism (broad-mindedness, beauty of nature and arts, social justice, a world at peace, equality, wisdom, unity with nature, environmental protection)</item>
+        <item>Self-Direction (creativity, freedom, curiosity, independence, choosing one\'s own goals)</item>
+        <item>Stimulation (daring, a varied and challenging life, an exciting life)</item>
+        <item>Hedonism (gratification of desires, enjoyment in life, self-indulgence)</item>
+        <item>Achievement (success, capability, ambition, influence on people and events)</item>
+        <item>Power (social power, authority, wealth)</item>
+        <item>Security (national security, family security, social order, cleanliness, reciprocation of favors)</item>
+    </string-array>
 
 </resources>

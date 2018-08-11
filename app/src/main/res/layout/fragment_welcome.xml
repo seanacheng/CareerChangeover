@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/navy"
     tools:context=".WelcomeFragment">
 
 
@@ -10,12 +11,14 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/welcome_text_top_margin"
         android:text="@string/welcome"
         android:textSize="@dimen/welcome_text_size"
         android:textAlignment="center"
-        android:textColor="@color/darkTurquoise"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/welcome_text_top_margin"/>
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="@color/darkTurquoise" />
 
     <TextView
         android:id="@+id/swipeTextView1"
@@ -27,6 +30,6 @@
         android:layout_marginEnd="@dimen/swipe_text_margin"
         android:text="@string/swipe_to_continue"
         android:textSize="@dimen/swipe_text_size"
-        android:textColor="@color/navy"/>
+        android:textColor="@color/white"/>
 
 </FrameLayout>

@@ -26,7 +26,7 @@
         android:layout_marginRight="@dimen/disclaimer_text_horizontal_margin"
         android:text="@string/disclaimer_text"
         android:textSize="@dimen/disclaimer_text_size"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
     <Button
         android:id="@+id/acceptButton"
@@ -45,6 +45,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/check_box_bottom_margin"
         android:text="@string/disclaimer_check_box"
-        android:textColor="@color/navy"/>
+        android:textColor="@color/darkgray"/>
 
 </RelativeLayout>

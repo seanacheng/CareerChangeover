@@ -19,9 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/mipmap/Values Visualizer Round App Logo.png" />
-                                      <entry key="outputName" value="ic_launcher_round" />
+                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/Tree.png" />
+                                      <entry key="outputName" value="ic_splash" />
                                     </map>
                                   </option>
                                 </PersistentState>

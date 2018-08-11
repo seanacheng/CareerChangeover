@@ -79,7 +79,7 @@ public class ResultsActivity extends AppCompatActivity {
         chart = findViewById(R.id.radarChart);
         linearLayout = findViewById(R.id.linearLayout);
         table = findViewById(R.id.tableLayout);
-        displayChartAndTable(createDataSet());
+        displayChartAndTable();
 
         // Chart settings
         chart.getDescription().setEnabled(false);
@@ -113,19 +113,19 @@ public class ResultsActivity extends AppCompatActivity {
                 // Shows results of both personal and employer surveys
                 resultsToView = both;
                 setChartAxes(chart);
-                displayChartAndTable(createDataSet());
+                displayChartAndTable();
                 break;
             case R.id.personalOnly:
                 // Shows personal survey results only
                 resultsToView = personalOnly;
                 setChartAxes(chart);
-                displayChartAndTable(createDataSet());
+                displayChartAndTable();
                 break;
             case R.id.employerOnly:
                 // Shows employer survey results only
                 resultsToView = employerOnly;
                 setChartAxes(chart);
-                displayChartAndTable(createDataSet());
+                displayChartAndTable();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -157,6 +157,30 @@ public class ResultsActivity extends AppCompatActivity {
 //        yAxis.setLabelCount(5);
 //        yAxis.setTextSize(10f);
         yAxis.setDrawLabels(false);
+    }
+
+    private void displayChartAndTable() {
+        // Displays chart and table data if given
+        // Erases chart and table and shows warning if no data is available
+        if (checkResultsExist(resultsToView)) {
+            ArrayList<IRadarDataSet> list = createDataSet();
+            data = new RadarData(list);
+            data.setDrawValues(false);
+
+            chart.setData(data);
+            chart.invalidate();
+
+            fillInTableRows();
+
+            linearLayout.removeView(warning);
+            chart.setVisibility(View.VISIBLE);
+        } else {
+            linearLayout.removeView(warning);
+            chart.clear();
+            chart.setVisibility(View.GONE);
+            table.removeAllViews();
+            showWarning();
+        }
     }
 
     private boolean checkResultsExist(String column) {
@@ -221,32 +245,7 @@ public class ResultsActivity extends AppCompatActivity {
         } else {
             dataSet1.setVisible(false);
         }
-
         return list;
-    }
-
-    private void displayChartAndTable(ArrayList<IRadarDataSet> list) {
-        // Displays chart and table data if given
-        // Erases chart and table and shows warning if no data is available
-        if (checkResultsExist(resultsToView)) {
-            data = new RadarData(list);
-            data.setDrawValues(false);
-
-            chart.setData(data);
-            chart.invalidate();
-
-            fillInTableRows();
-
-            linearLayout.removeView(warning);
-            chart.setVisibility(View.VISIBLE);
-        } else {
-            linearLayout.removeView(warning);
-            chart.clear();
-            chart.setVisibility(View.GONE);
-            table.removeAllViews();
-            showWarning();
-        }
-
     }
 
     private void fillInTableRows() {
@@ -327,7 +326,7 @@ public class ResultsActivity extends AppCompatActivity {
         warning.setGravity(Gravity.CENTER);
         String blank = "";
         if (resultsToView.equals(both)) {
-            blank = "both";
+            blank = "either";
         }
         else if (resultsToView.equals(personalOnly)) {
             blank = "the personal";
@@ -337,6 +336,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
         warning.setText(getString(R.string.warning,blank));
         warning.setTextSize(getResources().getDimension(R.dimen.warning_text_size));
+        warning.setTextColor(getResources().getColor(R.color.navy));
         linearLayout.addView(warning);
 
     }

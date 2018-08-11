@@ -12,7 +12,7 @@
     <dimen name="survey_statement_top_margin">20dp</dimen>
     <dimen name="survey_statement_horizontal_margin">10dp</dimen>
     <dimen name="survey_statement_bottom_margin">15dp</dimen>
-    <dimen name="survey_statement_text_size">18sp</dimen>
+    <dimen name="survey_statement_text_size">15sp</dimen>
     <dimen name="survey_horizontal_margin">10dp</dimen>
     <dimen name="survey_vertical_margin">20dp</dimen>
     <dimen name="survey_text_size">16sp</dimen>
@@ -37,7 +37,7 @@
     <dimen name="table_horizontal_margin">10dp</dimen>
     <dimen name="column_spacing_margin">10dp</dimen>
     <dimen name="row_spacing_margin">10dp</dimen>
-    <dimen name="warning_text_size">14sp</dimen>
+    <dimen name="warning_text_size">12sp</dimen>
     <dimen name="table_header_min_height">10dp</dimen>
 
     tutorial pages

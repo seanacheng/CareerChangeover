@@ -1,43 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/takeSelfSurveyButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_splash"
+        android:contentDescription="@string/splash_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <Button
         android:id="@+id/takeSelfSurveyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/self_survey_button_bottom_margin"
-        android:text="@string/take_self_eval" />
+        android:layout_marginBottom="10dp"
+        android:text="@string/take_self_eval"
+        app:layout_constraintBottom_toTopOf="@id/takeEmployerSurveyButton"/>
 
     <Button
         android:id="@+id/takeEmployerSurveyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/employer_survey_button_bottom_margin"
-        android:text="@string/take_employer_eval" />
-
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/take_employer_eval"
+        app:layout_constraintBottom_toTopOf="@+id/viewResultsButton" />
     <Button
         android:id="@+id/viewResultsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/results_button_bottom_margin"
-        android:text="@string/view_results" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/view_results"
+        app:layout_constraintBottom_toTopOf="@id/broughtToYouByTextView" />
 
     <TextView
         android:id="@+id/broughtToYouByTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/brought_to_you_by_bottom_margin"
+        android:layout_marginBottom="10dp"
         android:text="@string/logo"
+        android:textColor="@color/navy"
         android:textSize="@dimen/brought_to_you_by_text_size"
-        android:textColor="@color/navy"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

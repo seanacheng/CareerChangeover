@@ -49,8 +49,10 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
 
         if (column.startsWith("personal")) {
             surveyStatement.setText(getResources().getString(R.string.personal_survey_statement));
+            surveyStatement.setAllCaps(true);
         } else if (column.startsWith("employer")) {
             surveyStatement.setText(getResources().getString(R.string.employer_survey_statement));
+            surveyStatement.setAllCaps(true);
         }
     }
 

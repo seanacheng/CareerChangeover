@@ -106,16 +106,16 @@ public class MyDbHandler extends SQLiteOpenHelper {
                                 "CLEAN (neat, tidy)",
                                 "SELF-INDULGENT (doing pleasant things)"};
 
-        String[] valueDimensionsArray = {"universalism","power","hedonism","self-direction","security",
-                "stimulation","conformity","power","security","security","self-direction","universalism",
-                "tradition","conformity","security","universalism", "stimulation","universalism","power",
-                "universalism","universalism","self-direction","tradition","benevolence","achievement",
-                "universalism","tradition","stimulation", "universalism","achievement","conformity",
-                "self-direction","achievement","tradition", "benevolence","power","conformity","benevolence",
-                "hedonism","tradition","benevolence","self-direction","benevolence","achievement","security","hedonism"};
+        String[] valueDimensionsArray = {"Universalism","Power","Hedonism","Self-Direction","Security",
+                "Stimulation","Conformity","Power","Security","Security","Self-Direction","Universalism",
+                "Tradition","Conformity","Security","Universalism", "Stimulation","Universalism","Power",
+                "Universalism","Universalism","Self-Direction","Tradition","Benevolence","Achievement",
+                "Universalism","Tradition","Stimulation", "Universalism","Achievement","Conformity",
+                "Self-Direction","Achievement","Tradition", "Benevolence","Power","Conformity","Benevolence",
+                "Hedonism","Tradition","Benevolence","Self-Direction","Benevolence","Achievement","Security","Hedonism"};
 
-        String[] dimensionsArray = {"conformity","tradition","benevolence","universalism","self-direction",
-                "stimulation","hedonism","achievement","power","security"};
+        String[] dimensionsArray = {"Conformity","Tradition","Benevolence","Universalism","Self-Direction",
+                "Stimulation","Hedonism","Achievement","Power","Security"};
 
         ContentValues values = new ContentValues();
         // fills rank table with content values

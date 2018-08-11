@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/survey_vertical_margin"
         android:text="id"
         android:textSize="@dimen/survey_text_size"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
     <TextView
         android:id="@+id/valueTextView"
@@ -25,7 +25,7 @@
         android:layout_marginEnd="@dimen/survey_horizontal_margin"
         android:text="value"
         android:textSize="@dimen/survey_text_size"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
     <RadioGroup
         android:id="@+id/rankRadioGroup"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/valueTextView"
-        android:orientation="horizontal">
+        android:orientation="horizontal" >
 
         <RadioButton
             android:id="@+id/radio0"
@@ -41,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy"/>
 
         <RadioButton
             android:id="@+id/radio1"
@@ -49,7 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy"/>
 
         <RadioButton
             android:id="@+id/radio2"
@@ -57,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy" />
 
         <RadioButton
             android:id="@+id/radio3"
@@ -65,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy" />
 
         <RadioButton
             android:id="@+id/radio4"
@@ -73,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy" />
 
         <RadioButton
             android:id="@+id/radio5"
@@ -81,7 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy"/>
 
         <RadioButton
             android:id="@+id/radio6"
@@ -89,7 +95,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/radio_horizontal_margin"
             android:layout_marginRight="@dimen/radio_horizontal_margin"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="@color/navy" />
 
     </RadioGroup>
 
@@ -106,7 +113,7 @@
         android:text="@string/not_important"
         android:textSize="@dimen/imp_lbl_txt_size"
         android:textAlignment="center"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
     <TextView
         android:id="@+id/important"
@@ -117,7 +124,7 @@
         android:layout_marginBottom="@dimen/imp_lbl_bottom_margin"
         android:text="@string/important"
         android:textSize="@dimen/imp_lbl_txt_size"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
     <TextView
         android:id="@+id/veryImportant"
@@ -132,6 +139,6 @@
         android:text="@string/very_important"
         android:textSize="@dimen/imp_lbl_txt_size"
         android:textAlignment="center"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/navy" />
 
 </RelativeLayout>
