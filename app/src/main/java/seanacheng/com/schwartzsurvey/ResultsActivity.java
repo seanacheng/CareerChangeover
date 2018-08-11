@@ -1,6 +1,7 @@
 package seanacheng.com.schwartzsurvey;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.print.PrintAttributes;
 import android.support.v4.content.ContextCompat;
@@ -127,6 +128,10 @@ public class ResultsActivity extends AppCompatActivity {
                 setChartAxes(chart);
                 displayChartAndTable();
                 break;
+            case R.id.viewDescriptions:
+                // Switch to descriptions screen
+                Intent viewDescriptions = new Intent(ResultsActivity.this,DescriptionsActivity.class);
+                startActivity(viewDescriptions);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -285,32 +290,31 @@ public class ResultsActivity extends AppCompatActivity {
         table.addView(headerRow);
 
         // Data rows
-        for (int i=0;i<resultsArray.length;i++) {
+        for (Result res: resultsArray) {
             TableRow tableRow = new TableRow(this);
 
             TextView dimension = new TextView(this);
-            dimension.setText(resultsArray[i].getValueDimension());
+            dimension.setText(res.getValueDimension());
             dimension.setTextColor(getResources().getColor(R.color.darkgray));
-            dimension.setMinHeight((int) getResources().getDimension(R.dimen.table_header_min_height));
             dimension.setPadding(10,0,0,0);
             tableRow.addView(dimension);
 
             if (checkResultsExist(personalScore)) {
                 TextView personalScore = new TextView(this);
-                score = decimalFormat.format(resultsArray[i].getPersonalScore());
+                score = decimalFormat.format(res.getPersonalScore());
                 personalScore.setText(score);
                 personalScore.setTextColor(getResources().getColor(R.color.darkgray));
-                personalScore.setGravity(Gravity.RIGHT);
+                personalScore.setGravity(Gravity.END);
                 personalScore.setPadding(0,0,20,0);
                 tableRow.addView(personalScore);
             }
 
             if (checkResultsExist(employerScore)) {
                 TextView employerScore = new TextView(this);
-                score = decimalFormat.format(resultsArray[i].getEmployerScore());
+                score = decimalFormat.format(res.getEmployerScore());
                 employerScore.setText(score);
                 employerScore.setTextColor(getResources().getColor(R.color.darkgray));
-                employerScore.setGravity(Gravity.RIGHT);
+                employerScore.setGravity(Gravity.END);
                 employerScore.setPadding(0,0,20,0);
                 tableRow.addView(employerScore);
             }

@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navy"
     tools:context=".WelcomeFragment">
-
 
     <TextView
         android:id="@+id/welcomeTextView"
@@ -30,6 +28,6 @@
         android:layout_marginEnd="@dimen/swipe_text_margin"
         android:text="@string/swipe_to_continue"
         android:textSize="@dimen/swipe_text_size"
-        android:textColor="@color/white"/>
+        android:textColor="@color/darkgray"/>
 
 </FrameLayout>

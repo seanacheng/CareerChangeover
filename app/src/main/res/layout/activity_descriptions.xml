@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultsActivity">
+    tools:context=".DescriptionsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -11,42 +11,38 @@
         android:fadeScrollbars="false" >
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/descriptionsLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/resultsTextView"
+                android:id="@+id/descriptionsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/results_title_top_margin"
                 android:layout_gravity="center"
                 android:textSize="@dimen/results_title_text_size"
-                android:text="@string/results"
+                android:text="@string/descriptions"
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textColor="@color/darkTurquoise" />
 
-            <com.github.mikephil.charting.charts.RadarChart
-                android:id="@+id/radarChart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
             <TableLayout
-                android:id="@+id/tableLayout"
+                android:id="@+id/descriptionsTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
                 android:layout_marginStart="@dimen/table_horizontal_margin"
                 android:layout_marginLeft="@dimen/table_horizontal_margin"
-                android:layout_marginTop="@dimen/table_vertical_margin"
-                android:layout_marginBottom="@dimen/table_vertical_margin">
-
+                android:layout_marginEnd="@dimen/table_horizontal_margin"
+                android:layout_marginRight="@dimen/table_horizontal_margin"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp" >
             </TableLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

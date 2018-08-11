@@ -13,6 +13,7 @@
         android:layout_marginTop="@dimen/disclaimer_top_margin"
         android:text="@string/disclaimer"
         android:textStyle="bold"
+        android:textAllCaps="true"
         android:textSize="@dimen/intro_text_size"
         android:textColor="@color/darkTurquoise" />
 

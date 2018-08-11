@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/navy"
     tools:context=".MainActivity">
 
     <ImageView
@@ -33,6 +34,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/take_employer_eval"
         app:layout_constraintBottom_toTopOf="@+id/viewResultsButton" />
+
     <Button
         android:id="@+id/viewResultsButton"
         android:layout_width="match_parent"
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/logo"
-        android:textColor="@color/navy"
+        android:textColor="@color/turquoise"
         android:textSize="@dimen/brought_to_you_by_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

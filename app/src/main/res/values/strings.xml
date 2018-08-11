@@ -30,19 +30,21 @@
     <string name="save">Save</string>
 
     disclaimer page
-    <string name="disclaimer">DISCLAIMER:</string>
+    <string name="disclaimer">Disclaimer:</string>
     <string name="disclaimer_text">The information provided in this application is for educational and entertainment purposes only. The survey results are not intended to diagnose any disease or conditions, and may not be used by health care professionals to recommend a treatment. </string>
     <string name="accept">I Accept</string>
     <string name="disclaimer_check_box">Do Not Show Again</string>
 
     results page
-    <string name="results">RESULTS</string>
+    <string name="results">Results</string>
     <string name="table_header_personal_score">Personal Score</string>
     <string name="table_header_employer_score">Employer Score</string>
     <string name="both">Both</string>
     <string name="personal_only">Personal Only</string>
     <string name="employer_only">Employer Only</string>
-    <string name="warning">WARNING:\n No results found. Please complete %1$s survey to view results.</string>
+    <string name="view_descriptions">View Descriptions</string>
+    <string name="descriptions">Descriptions</string>
+    <string name="warning">WARNING:\n Please complete %1$s survey to view results.</string>
     <string-array name="value_groupings">
         <item>Conformity (obedience, honoring parents and elders, self-discipline, politeness)</item>
         <item>Tradition (respect for tradition, humbleness, accepting one\'s portion in life, devotion, modesty)</item>
