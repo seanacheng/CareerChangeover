@@ -35,4 +35,5 @@ dependencies {
     compileOnly project(':mysql-connector-java-5.1.46-bin')
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
 }

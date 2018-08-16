@@ -21,9 +21,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ImageView image = findViewById(R.id.splashImageView);
-        image.setMinimumHeight(getScreenResolution(this).get("height")/5);
-        image.setMinimumWidth(getScreenResolution(this).get("height")/5);
+        ImageView image = findViewById(R.id.splashGifImageView);
+        image.setMinimumHeight(getScreenResolution(this).get("height")/4);
+        image.setMinimumWidth(getScreenResolution(this).get("height")/4);
 
         new Handler().postDelayed(new Runnable() {
             @Override
