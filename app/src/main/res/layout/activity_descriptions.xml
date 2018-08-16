@@ -29,15 +29,17 @@
                 android:textColor="@color/darkTurquoise" />
 
             <TableLayout
-                android:id="@+id/descriptionsTable"
+                android:id="@+id/descriptionsGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/table_horizontal_margin"
                 android:layout_marginLeft="@dimen/table_horizontal_margin"
                 android:layout_marginEnd="@dimen/table_horizontal_margin"
                 android:layout_marginRight="@dimen/table_horizontal_margin"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp" >
+
             </TableLayout>
 
         </LinearLayout>
