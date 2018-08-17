@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/turquoise"
     tools:context=".SurveyActivity">
 
     <TextView
@@ -19,7 +20,7 @@
         android:textSize="@dimen/survey_statement_text_size"
         android:textStyle="bold"
         android:textAllCaps="true"
-        android:textColor="@color/darkTurquoise"/>
+        android:textColor="@color/navy"/>
 
     <ListView
         android:id="@+id/surveyListView"
@@ -29,6 +30,7 @@
         android:scrollbarStyle="outsideOverlay"
         android:fadeScrollbars="false"
         android:paddingBottom="60dp"
+        android:background="@color/white"
         android:clipToPadding="false" />
 
     <Button

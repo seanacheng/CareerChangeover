@@ -11,8 +11,8 @@
     <string name="what">what is the values visualizer?</string>
     <string name="what_text">The Schwartz Theory of Basic Human Values developed by Shalom Schwartz identifies 10 fundamental motivational values that are universally recognized. Schwartz developed a value survey following this theory that measures the degree to which each value motivates a person by breaking down each value into lower-level beliefs.  The results are then graphed on a radar chart to portray the dynamic relationships among the 10 distinct values. The survey provided is an adapted version of the Schwartz Value Survey.</string>
     <string name="how">instructions</string>
-    <string name="how_text">1. You can save your progress and return to complete the survey later.\n\n2. You must answer all 46 survey questions in order to view the results.</string>
-    <string name="go_to_menu">exit to menu</string>
+    <string name="how_text">1. You can save your progress and return to complete the survey later.\n\n2. You must answer all 46 survey questions in order to view the results.\n\n3. To see values description, click the menu button at the top right corner of the results screen and click \'View Descriptions\'. </string>
+    <string name="go_to_menu">go to menu</string>
 
     menu page
     <string name="go_to_tutorial">go to tutorial</string>

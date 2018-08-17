@@ -256,7 +256,7 @@ public class ResultsActivity extends AppCompatActivity {
     private void fillInTableRows() {
         // Refreshes table data
         table.removeAllViews();
-        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        DecimalFormat decimalFormat = new DecimalFormat("#.#");
         String score;
 
         // Table margins
