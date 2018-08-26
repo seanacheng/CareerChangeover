@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="@dimen/exit_button_bottom_margin"
-        android:text="@string/go_to_menu" />
+        android:text="@string/close_tutorial" />
 
 </android.support.design.widget.CoordinatorLayout>

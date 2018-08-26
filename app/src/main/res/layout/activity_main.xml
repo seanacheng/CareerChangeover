@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/image_dimensions"
+        android:layout_height="@dimen/image_dimensions"
         app:layout_constraintBottom_toTopOf="@+id/takeSelfSurveyButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_splash"

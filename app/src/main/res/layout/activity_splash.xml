@@ -9,8 +9,8 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/splashGifImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/image_dimensions"
+        android:layout_height="@dimen/image_dimensions"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"

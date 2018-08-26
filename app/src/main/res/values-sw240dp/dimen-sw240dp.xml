@@ -8,6 +8,7 @@
     <dimen name="results_button_bottom_margin">60dp</dimen>
     <dimen name="brought_to_you_by_bottom_margin">15dp</dimen>
     <dimen name="brought_to_you_by_text_size">12sp</dimen>
+    <dimen name="image_dimensions">100dp</dimen>
 
     survey page
     <dimen name="survey_statement_top_margin">15dp</dimen>
