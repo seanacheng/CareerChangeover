@@ -33,6 +33,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <Button
+                android:id="@+id/viewDescriptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_descriptions"
+                android:layout_marginTop="@dimen/button_vertical_margin"
+                android:layout_marginBottom="@dimen/button_vertical_margin"/>
+
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
@@ -40,8 +48,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/table_horizontal_margin"
                 android:layout_marginLeft="@dimen/table_horizontal_margin"
-                android:layout_marginTop="@dimen/table_vertical_margin"
-                android:layout_marginBottom="@dimen/table_vertical_margin">
+                android:layout_marginBottom="@dimen/table_bottom_margin">
 
             </TableLayout>
 

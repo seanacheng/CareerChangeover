@@ -2,22 +2,17 @@ package seanacheng.com.schwartzsurvey;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.print.PrintAttributes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -50,6 +45,7 @@ public class ResultsActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     TableLayout table;
     TextView warning;
+    Button descriptionsButton;
 
     String both;
     String personalOnly;
@@ -77,8 +73,16 @@ public class ResultsActivity extends AppCompatActivity {
         employerScore = getResources().getString(R.string.table_header_employer_score);
 
         // Displays chart and table
-        chart = findViewById(R.id.radarChart);
         linearLayout = findViewById(R.id.linearLayout);
+        chart = findViewById(R.id.radarChart);
+        descriptionsButton = findViewById(R.id.viewDescriptions);
+        descriptionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent viewDescriptions = new Intent(ResultsActivity.this,DescriptionsActivity.class);
+                startActivity(viewDescriptions);
+            }
+        });
         table = findViewById(R.id.tableLayout);
         displayChartAndTable();
 
@@ -103,7 +107,7 @@ public class ResultsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflates chart view menu
-        getMenuInflater().inflate(R.menu.radar_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_results_activity, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -128,10 +132,6 @@ public class ResultsActivity extends AppCompatActivity {
                 setChartAxes(chart);
                 displayChartAndTable();
                 break;
-            case R.id.viewDescriptions:
-                // Switch to descriptions screen
-                Intent viewDescriptions = new Intent(ResultsActivity.this,DescriptionsActivity.class);
-                startActivity(viewDescriptions);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -171,6 +171,7 @@ public class ResultsActivity extends AppCompatActivity {
             ArrayList<IRadarDataSet> list = createDataSet();
             data = new RadarData(list);
             data.setDrawValues(false);
+            descriptionsButton.setVisibility(View.VISIBLE);
 
             chart.setData(data);
             chart.invalidate();
@@ -181,6 +182,7 @@ public class ResultsActivity extends AppCompatActivity {
             chart.setVisibility(View.VISIBLE);
         } else {
             linearLayout.removeView(warning);
+            descriptionsButton.setVisibility(View.INVISIBLE);
             chart.clear();
             chart.setVisibility(View.GONE);
             table.removeAllViews();
@@ -223,14 +225,6 @@ public class ResultsActivity extends AppCompatActivity {
 
         ArrayList<IRadarDataSet> list = new ArrayList<>();
 
-        // Fills employer data set with data and settings
-        RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
-        int navy = ContextCompat.getColor(this,R.color.navy);
-        dataSet2.setColor(navy);
-        dataSet2.setLineWidth(2);
-        dataSet2.setHighlightEnabled(false);
-        list.add(dataSet2);
-
         // Fills personal data set with data and settings
         RadarDataSet dataSet1 = new RadarDataSet(personalEntryArrayList, personalScore);
         int turquoise = ContextCompat.getColor(this,R.color.turquoise);
@@ -239,17 +233,27 @@ public class ResultsActivity extends AppCompatActivity {
         dataSet1.setHighlightEnabled(false);
         list.add(dataSet1);
 
-        if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
-            dataSet2.setVisible(true);
-        } else {
-            dataSet2.setVisible(false);
-        }
+        // Fills employer data set with data and settings
+        RadarDataSet dataSet2 = new RadarDataSet(employerEntryArrayList, employerScore);
+        int navy = ContextCompat.getColor(this,R.color.navy);
+        dataSet2.setColor(navy);
+        dataSet2.setLineWidth(2);
+        dataSet2.setHighlightEnabled(false);
+        list.add(dataSet2);
 
         if (!resultsToView.equals(employerOnly) && checkResultsExist(personalScore)) {
             dataSet1.setVisible(true);
         } else {
             dataSet1.setVisible(false);
         }
+
+        if (!resultsToView.equals(personalOnly) && checkResultsExist(employerScore)) {
+            dataSet2.setVisible(true);
+        } else {
+            dataSet2.setVisible(false);
+        }
+
+
         return list;
     }
 

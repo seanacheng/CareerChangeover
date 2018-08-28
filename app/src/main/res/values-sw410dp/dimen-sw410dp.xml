@@ -34,7 +34,8 @@
     results page
     <dimen name="results_title_top_margin">30dp</dimen>
     <dimen name="results_title_text_size">24sp</dimen>
-    <dimen name="table_vertical_margin">30dp</dimen>
+    <dimen name="button_vertical_margin">10dp</dimen>
+    <dimen name="table_bottom_margin">30dp</dimen>
     <dimen name="table_horizontal_margin">10dp</dimen>
     <dimen name="column_spacing_margin">10dp</dimen>
     <dimen name="row_spacing_margin">10dp</dimen>

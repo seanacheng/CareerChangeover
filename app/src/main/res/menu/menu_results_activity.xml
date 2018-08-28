@@ -11,7 +11,4 @@
     <item
         android:id="@+id/employerOnly"
         android:title="@string/employer_only" />
-    <item
-        android:id="@+id/viewDescriptions"
-        android:title="@string/view_descriptions" />
 </menu>
