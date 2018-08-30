@@ -3,10 +3,6 @@
 
     menu page
     <dimen name="intro_text_size">24sp</dimen>
-    <dimen name="self_survey_button_bottom_margin">180dp</dimen>
-    <dimen name="employer_survey_button_bottom_margin">125dp</dimen>
-    <dimen name="results_button_bottom_margin">70dp</dimen>
-    <dimen name="brought_to_you_by_bottom_margin">20dp</dimen>
     <dimen name="brought_to_you_by_text_size">14sp</dimen>
     <dimen name="image_dimensions">220dp</dimen>
 
@@ -41,7 +37,6 @@
     <dimen name="column_spacing_margin">10dp</dimen>
     <dimen name="row_spacing_margin">10dp</dimen>
     <dimen name="warning_text_size">10sp</dimen>
-    <dimen name="table_header_min_height">10dp</dimen>
 
     tutorial pages
     <dimen name="welcome_text_top_margin">100dp</dimen>
