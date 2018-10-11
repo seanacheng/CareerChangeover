@@ -1,4 +1,4 @@
-package seanacheng.com.schwartzsurvey;
+package careerchangeover.com.valuesvisualizer;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

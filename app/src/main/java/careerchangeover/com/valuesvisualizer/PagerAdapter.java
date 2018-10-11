@@ -1,4 +1,4 @@
-package seanacheng.com.schwartzsurvey;
+package careerchangeover.com.valuesvisualizer;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

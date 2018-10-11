@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="seanacheng.com.schwartzsurvey.MainActivity">
+    tools:context="careerchangeover.com.valuesvisualizer.MainActivity">
     <item
         android:id="@+id/viewTutorial"
         android:orderInCategory="100"

@@ -1,4 +1,4 @@
-package seanacheng.com.schwartzsurvey;
+package careerchangeover.com.valuesvisualizer;
 
 import android.annotation.TargetApi;
 import android.content.Context;

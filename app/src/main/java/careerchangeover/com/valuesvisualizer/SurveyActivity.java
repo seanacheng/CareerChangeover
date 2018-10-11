@@ -1,4 +1,4 @@
-package seanacheng.com.schwartzsurvey;
+package careerchangeover.com.valuesvisualizer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
