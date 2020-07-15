@@ -3,17 +3,20 @@ package careerchangeover.com.valuesvisualizer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     MyDbHandler dbHandler;
     SharedPreferences mPref;
     String seeTutorialPref = "openTutorial";
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
         // default open tutorial flag set to true
         boolean goToTutorial = mPref.getBoolean(seeTutorialPref,true);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         // opens tutorial is flag is set to true
         if (goToTutorial) {
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.takeSelfSurveyButton).setOnClickListener(this);
         findViewById(R.id.takeEmployerSurveyButton).setOnClickListener(this);
         findViewById(R.id.viewResultsButton).setOnClickListener(this);
+        findViewById(R.id.crashButton).setOnClickListener(this);
     }
 
     @Override
@@ -76,7 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent toResults = new Intent(MainActivity.this,ResultsActivity.class);
                 startActivity(toResults);
                 break;
+            case R.id.crashButton:
+                throw new RuntimeException("Test Crash"); // Force a crash
         }
     }
-
 }
