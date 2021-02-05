@@ -4,42 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@color/darkNavy"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/image_dimensions"
         android:layout_height="@dimen/image_dimensions"
-        app:layout_constraintBottom_toTopOf="@+id/takeSelfSurveyButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_splash"
         android:contentDescription="@string/splash_description"
+        app:layout_constraintBottom_toTopOf="@+id/takeSelfSurveyButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_splash" />
+
 
     <Button
-        android:id="@+id/takeSelfSurveyButton"
+        android:id="@+id/testButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="@string/take_self_eval"
-        app:layout_constraintBottom_toTopOf="@id/takeEmployerSurveyButton"/>
+        android:layout_marginBottom="2dp"
+        android:text="Webview Test"
+        app:layout_constraintBottom_toTopOf="@+id/crashButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/crashButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:text="Create A Crash"
         app:layout_constraintBottom_toTopOf="@+id/takeSelfSurveyButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/takeSelfSurveyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/take_self_eval"
+        app:layout_constraintBottom_toTopOf="@id/takeEmployerSurveyButton"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
         android:id="@+id/takeEmployerSurveyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/take_employer_eval"
         app:layout_constraintBottom_toTopOf="@+id/viewResultsButton" />
 
@@ -47,8 +59,8 @@
         android:id="@+id/viewResultsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/view_results"
         app:layout_constraintBottom_toTopOf="@id/broughtToYouByTextView" />
 
@@ -56,7 +68,7 @@
         android:id="@+id/broughtToYouByTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/logo"
         android:textColor="@color/turquoise"
         android:textSize="@dimen/brought_to_you_by_text_size"
