@@ -46,16 +46,26 @@
     <string name="descriptions">Values Description</string>
     <string name="warning">WARNING:\n Please complete %1$s survey to view results.</string>
     <string-array name="value_groupings">
-        <item>Conformity</item> <item>Obedience, honoring parents and elders, self-discipline, politeness</item>
-        <item>Tradition</item> <item>Respect for tradition, humbleness, accepting one\'s portion in life, devotion, modesty</item>
-        <item>Benevolence</item> <item>Helpfulness, honesty, forgiveness, loyalty, responsibility</item>
-        <item>Universalism</item> <item>Broad-mindedness, beauty of nature and arts, social justice, a world at peace, equality, wisdom, unity with nature, environmental protection</item>
-        <item>Self-Direction</item> <item>Creativity, freedom, curiosity, independence, choosing one\'s own goals</item>
-        <item>Stimulation</item> <item>Daring, a varied and challenging life, an exciting life</item>
-        <item>Hedonism</item> <item>Gratification of desires, enjoyment in life, self-indulgence</item>
-        <item>Achievement</item> <item>Success, capability, ambition, influence on people and events</item>
-        <item>Power</item> <item>Social power, authority, wealth</item>
-        <item>Security</item> <item>National security, family security, social order, cleanliness, reciprocation of favors</item>
+        <item>Conformity</item>
+        <item>Obedience, honoring parents and elders, self-discipline, politeness</item>
+        <item>Tradition</item>
+        <item>Respect for tradition, humbleness, accepting one\'s portion in life, devotion, modesty</item>
+        <item>Benevolence</item>
+        <item>Helpfulness, honesty, forgiveness, loyalty, responsibility</item>
+        <item>Universalism</item>
+        <item>Broad-mindedness, beauty of nature and arts, social justice, a world at peace, equality, wisdom, unity with nature, environmental protection</item>
+        <item>Self-Direction</item>
+        <item>Creativity, freedom, curiosity, independence, choosing one\'s own goals</item>
+        <item>Stimulation</item>
+        <item>Daring, a varied and challenging life, an exciting life</item>
+        <item>Hedonism</item>
+        <item>Gratification of desires, enjoyment in life, self-indulgence</item>
+        <item>Achievement</item>
+        <item>Success, capability, ambition, influence on people and events</item>
+        <item>Power</item>
+        <item>Social power, authority, wealth</item>
+        <item>Security</item>
+        <item>National security, family security, social order, cleanliness, reciprocation of favors</item>
     </string-array>
 
 </resources>

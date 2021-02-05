@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "808619353706",
+    "firebase_url": "https://valuesvisualizer.firebaseio.com",
+    "project_id": "valuesvisualizer",
+    "storage_bucket": "valuesvisualizer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808619353706:android:e063ce8f1f80748e768c13",
+        "android_client_info": {
+          "package_name": "careerchangeover.com.valuesvisualizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808619353706-4p52rgeq1lv2k421q1shlbe7purc9p1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDly_mfyOMKd4X19oGYyDrJVGJ0QY1UZvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808619353706-4p52rgeq1lv2k421q1shlbe7purc9p1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
